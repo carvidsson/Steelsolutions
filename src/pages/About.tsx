@@ -1,86 +1,108 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslation } from "@/translations/translations";
 import heroImage from "@/assets/hero-manufacturing.jpg";
 
 const About = () => {
+  const { language } = useLanguage();
+
   return (
     <div className="min-h-screen">
       <Header />
       
       <section className="pt-32 pb-16 bg-graphite text-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <p className="text-sm font-medium text-taupe tracking-widest uppercase mb-4">About Us</p>
+          <p className="text-sm font-medium text-taupe tracking-widest uppercase mb-4">
+            {getTranslation(language, "about_page_title")}
+          </p>
           <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-            Nordic Precision<br />Engineering Excellence
+            AB Steelsolutions
           </h1>
+          <p className="text-xl text-offWhite max-w-3xl leading-relaxed">
+            {getTranslation(language, "about_page_subtitle")}
+          </p>
         </div>
       </section>
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
-              <img
-                src={heroImage}
-                alt="Manufacturing facility"
-                className="w-full h-[600px] object-cover rounded-sm"
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
+                {getTranslation(language, "about_identity_title")}
+              </h2>
+              <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                {getTranslation(language, "about_identity_text").split('\n\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+            <div>
+              <img 
+                src={heroImage} 
+                alt="AB Steelsolutions facility" 
+                className="w-full h-[500px] object-cover rounded-sm"
               />
             </div>
-            <div className="space-y-8">
-              <div>
-                <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Our Identity
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  Founded in Stockholm, AB Steelsolutions represents the pinnacle of Nordic engineering tradition combined with cutting-edge manufacturing technology.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  We specialize in precision steel manufacturing and engineering solutions for industries where quality and reliability are non-negotiable.
-                </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+            <div className="lg:order-2">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
+                {getTranslation(language, "about_vision_title")}
+              </h2>
+              <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                {getTranslation(language, "about_vision_text").split('\n\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+            <div className="lg:order-1">
+              <div className="bg-muted p-12 rounded-sm">
+                <blockquote className="text-2xl font-light text-foreground italic leading-relaxed">
+                  "{getTranslation(language, "about_promise_text")}"
+                </blockquote>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
-            <div className="space-y-6">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-                Vision & Mission
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                To be the leading provider of precision steel solutions in Northern Europe, setting the standard for quality, innovation, and sustainability in manufacturing.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed italic">
-                "We believe that precision is not just about measurements—it's about commitment to excellence in every aspect of our work."
-              </p>
-            </div>
-            
-            <div className="space-y-6">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-                Our Promise
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Every component, every beam, every solution we deliver carries our commitment to precision, quality, and reliability. We stand behind our work with comprehensive quality assurance and full material traceability.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-muted p-12 lg:p-16 rounded-sm">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-              <div>
-                <div className="font-heading text-5xl font-bold text-foreground mb-2">25+</div>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">Years Experience</p>
+          <div className="bg-graphite text-white p-12 lg:p-16 rounded-sm">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">
+              {getTranslation(language, "about_stats_title")}
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                  {getTranslation(language, "about_stat1")}
+                </div>
+                <div className="text-sm text-offWhite">
+                  {getTranslation(language, "about_stat1_desc")}
+                </div>
               </div>
-              <div>
-                <div className="font-heading text-5xl font-bold text-foreground mb-2">500+</div>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">Active Clients</p>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                  {getTranslation(language, "about_stat2")}
+                </div>
+                <div className="text-sm text-offWhite">
+                  {getTranslation(language, "about_stat2_desc")}
+                </div>
               </div>
-              <div>
-                <div className="font-heading text-5xl font-bold text-foreground mb-2">15k+</div>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">Projects Delivered</p>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                  {getTranslation(language, "about_stat3")}
+                </div>
+                <div className="text-sm text-offWhite">
+                  {getTranslation(language, "about_stat3_desc")}
+                </div>
               </div>
-              <div>
-                <div className="font-heading text-5xl font-bold text-foreground mb-2">ISO</div>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">9001 Certified</p>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                  {getTranslation(language, "about_stat4")}
+                </div>
+                <div className="text-sm text-offWhite">
+                  {getTranslation(language, "about_stat4_desc")}
+                </div>
               </div>
             </div>
           </div>

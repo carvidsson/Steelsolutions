@@ -1,73 +1,65 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslation } from "@/translations/translations";
 import productsImage from "@/assets/products-warehouse.jpg";
 import beamsImage from "@/assets/product-beams.jpg";
 
 const ProductHighlights = () => {
+  const { language } = useLanguage();
+
+  const products = [
+    {
+      titleKey: "product1_title",
+      descKey: "product1_desc",
+      image: beamsImage
+    },
+    {
+      titleKey: "product2_title",
+      descKey: "product2_desc",
+      image: productsImage
+    },
+    {
+      titleKey: "product3_title",
+      descKey: "product3_desc",
+      image: productsImage
+    }
+  ];
+
   return (
     <section className="py-24 bg-muted">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="mb-16">
-          <p className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4">
-            Our Solutions
-          </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
-            Engineered for Excellence
+        <div className="max-w-2xl mb-16">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
+            {getTranslation(language, "products_title")}
           </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            {getTranslation(language, "products_subtitle")}
+          </p>
         </div>
 
-        <div className="space-y-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <img
-                src={beamsImage}
-                alt="Structural steel beams"
-                className="w-full h-[500px] object-cover rounded-sm"
-              />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product, index) => (
+            <div 
+              key={index}
+              className="group bg-background rounded-sm overflow-hidden hover:shadow-lg transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="h-64 overflow-hidden">
+                <img 
+                  src={product.image} 
+                  alt={getTranslation(language, product.titleKey)}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
+                  {getTranslation(language, product.titleKey)}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {getTranslation(language, product.descKey)}
+                </p>
+              </div>
             </div>
-            <div className="order-1 lg:order-2 space-y-6">
-              <h3 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-                Structural Steel
-              </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                High-performance structural steel solutions designed for critical infrastructure and demanding industrial applications.
-              </p>
-              <ul className="space-y-3">
-                {["Grade S355 & S460 certified", "Custom dimensions available", "ISO 9001 quality assurance"].map(
-                  (spec) => (
-                    <li key={spec} className="flex items-start">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 mr-3" />
-                      <span className="text-foreground">{spec}</span>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h3 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-                Precision Components
-              </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                CNC-machined components manufactured to exact specifications with tolerances down to ±0.01mm for aerospace and automotive industries.
-              </p>
-              <ul className="space-y-3">
-                {["5-axis CNC machining", "Material traceability", "Rapid prototyping services"].map((spec) => (
-                  <li key={spec} className="flex items-start">
-                    <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 mr-3" />
-                    <span className="text-foreground">{spec}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <img
-                src={productsImage}
-                alt="Precision manufacturing"
-                className="w-full h-[500px] object-cover rounded-sm"
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

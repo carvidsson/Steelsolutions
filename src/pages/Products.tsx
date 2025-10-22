@@ -1,30 +1,34 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslation } from "@/translations/translations";
 import productsImage from "@/assets/products-warehouse.jpg";
 import beamsImage from "@/assets/product-beams.jpg";
 
 const Products = () => {
+  const { language } = useLanguage();
+
   const products = [
     {
-      name: "Structural Steel Beams",
-      category: "Construction",
-      description: "High-strength structural beams for buildings and infrastructure projects. Available in various profiles including I-beams, H-beams, and custom sections.",
-      specs: ["Grade: S355, S460", "Length: Up to 18m", "Custom fabrication available"],
+      nameKey: "product_beam_name",
+      categoryKey: "product_beam_category",
+      descKey: "product_beam_desc",
+      specs: ["product_beam_spec1", "product_beam_spec2", "product_beam_spec3"],
       image: beamsImage
     },
     {
-      name: "Precision Machined Components",
-      category: "Manufacturing",
-      description: "CNC-machined parts with exceptional tolerances for aerospace, automotive, and industrial applications.",
-      specs: ["Tolerance: ±0.01mm", "Materials: Steel, aluminum, titanium", "5-axis machining capability"],
+      nameKey: "product_machined_name",
+      categoryKey: "product_machined_category",
+      descKey: "product_machined_desc",
+      specs: ["product_machined_spec1", "product_machined_spec2", "product_machined_spec3"],
       image: productsImage
     },
     {
-      name: "Steel Plates & Sheets",
-      category: "Materials",
-      description: "Premium quality steel plates and sheets in various thicknesses and grades for diverse industrial applications.",
-      specs: ["Thickness: 3-100mm", "Surface: Hot rolled, cold rolled", "Certified materials"],
+      nameKey: "product_plates_name",
+      categoryKey: "product_plates_category",
+      descKey: "product_plates_desc",
+      specs: ["product_plates_spec1", "product_plates_spec2", "product_plates_spec3"],
       image: productsImage
     }
   ];
@@ -35,12 +39,14 @@ const Products = () => {
       
       <section className="pt-32 pb-16 bg-graphite text-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <p className="text-sm font-medium text-taupe tracking-widest uppercase mb-4">Our Products</p>
+          <p className="text-sm font-medium text-taupe tracking-widest uppercase mb-4">
+            {getTranslation(language, "products_page_title")}
+          </p>
           <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-            Engineered Solutions
+            {getTranslation(language, "products_page_hero")}
           </h1>
           <p className="text-xl text-offWhite max-w-3xl leading-relaxed">
-            Comprehensive range of steel products and precision manufacturing services designed for the most demanding applications
+            {getTranslation(language, "products_page_subtitle")}
           </p>
         </div>
       </section>
@@ -50,7 +56,7 @@ const Products = () => {
           <div className="space-y-24">
             {products.map((product, index) => (
               <div
-                key={product.name}
+                key={index}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
@@ -58,34 +64,38 @@ const Products = () => {
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                   <img
                     src={product.image}
-                    alt={product.name}
+                    alt={getTranslation(language, product.nameKey)}
                     className="w-full h-[500px] object-cover rounded-sm"
                   />
                 </div>
                 <div className={`space-y-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                   <div>
                     <span className="text-sm font-medium text-accent tracking-widest uppercase">
-                      {product.category}
+                      {getTranslation(language, product.categoryKey)}
                     </span>
                     <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">
-                      {product.name}
+                      {getTranslation(language, product.nameKey)}
                     </h2>
                   </div>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    {product.description}
+                    {getTranslation(language, product.descKey)}
                   </p>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-3">Technical Specifications</h3>
+                    <h3 className="font-semibold text-foreground mb-3">
+                      {getTranslation(language, "products_specs_title")}
+                    </h3>
                     <ul className="space-y-2">
-                      {product.specs.map((spec) => (
-                        <li key={spec} className="flex items-start">
+                      {product.specs.map((specKey) => (
+                        <li key={specKey} className="flex items-start">
                           <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 mr-3" />
-                          <span className="text-foreground">{spec}</span>
+                          <span className="text-foreground">{getTranslation(language, specKey)}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <Button className="bg-primary hover:bg-primary/90">Request Quote</Button>
+                  <Button className="bg-primary hover:bg-primary/90">
+                    {getTranslation(language, "products_cta")}
+                  </Button>
                 </div>
               </div>
             ))}

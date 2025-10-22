@@ -4,10 +4,13 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslation } from "@/translations/translations";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,7 +20,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully! We'll get back to you soon.");
+    toast.success(getTranslation(language, "contact_form_success"));
     setFormData({ name: "", email: "", company: "", message: "" });
   };
 
@@ -34,12 +37,14 @@ const Contact = () => {
       
       <section className="pt-32 pb-16 bg-graphite text-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <p className="text-sm font-medium text-taupe tracking-widest uppercase mb-4">Get in Touch</p>
+          <p className="text-sm font-medium text-taupe tracking-widest uppercase mb-4">
+            {getTranslation(language, "contact_page_hero")}
+          </p>
           <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
-            Contact Us
+            {getTranslation(language, "contact_page_title")}
           </h1>
           <p className="text-xl text-offWhite max-w-3xl leading-relaxed">
-            Let's discuss how our precision engineering solutions can support your next project
+            {getTranslation(language, "contact_page_subtitle")}
           </p>
         </div>
       </section>
@@ -50,13 +55,13 @@ const Contact = () => {
             <div className="space-y-12">
               <div>
                 <h2 className="font-heading text-3xl font-bold text-foreground mb-8">
-                  Send us a message
+                  {getTranslation(language, "contact_form_title")}
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Input
                       name="name"
-                      placeholder="Your name"
+                      placeholder={getTranslation(language, "contact_form_name")}
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -67,7 +72,7 @@ const Contact = () => {
                     <Input
                       name="email"
                       type="email"
-                      placeholder="Email address"
+                      placeholder={getTranslation(language, "contact_form_email")}
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -77,7 +82,7 @@ const Contact = () => {
                   <div>
                     <Input
                       name="company"
-                      placeholder="Company name"
+                      placeholder={getTranslation(language, "contact_form_company")}
                       value={formData.company}
                       onChange={handleChange}
                       className="bg-background"
@@ -86,7 +91,7 @@ const Contact = () => {
                   <div>
                     <Textarea
                       name="message"
-                      placeholder="Tell us about your project"
+                      placeholder={getTranslation(language, "contact_form_message")}
                       value={formData.message}
                       onChange={handleChange}
                       required
@@ -95,7 +100,7 @@ const Contact = () => {
                     />
                   </div>
                   <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
-                    Send Message
+                    {getTranslation(language, "contact_form_submit")}
                   </Button>
                 </form>
               </div>
@@ -104,7 +109,7 @@ const Contact = () => {
             <div className="space-y-12">
               <div>
                 <h2 className="font-heading text-3xl font-bold text-foreground mb-8">
-                  Contact Information
+                  {getTranslation(language, "contact_info_title")}
                 </h2>
                 <div className="space-y-8">
                   <div className="flex items-start space-x-4">
@@ -112,11 +117,12 @@ const Contact = () => {
                       <MapPin className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Headquarters</h3>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        {getTranslation(language, "contact_headquarters")}
+                      </h3>
                       <p className="text-muted-foreground">
-                        Industrivägen 15<br />
-                        123 45 Stockholm<br />
-                        Sweden
+                        Hammarö<br />
+                        {getTranslation(language, "footer_location")}
                       </p>
                     </div>
                   </div>
@@ -126,8 +132,10 @@ const Contact = () => {
                       <Phone className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                      <p className="text-muted-foreground">+46 8 123 456 78</p>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        {getTranslation(language, "contact_phone")}
+                      </h3>
+                      <p className="text-muted-foreground">+46 54 56 01 95</p>
                     </div>
                   </div>
 
@@ -136,8 +144,10 @@ const Contact = () => {
                       <Mail className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                      <p className="text-muted-foreground">info@absteelsolutions.com</p>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        {getTranslation(language, "contact_email")}
+                      </h3>
+                      <p className="text-muted-foreground">info@absteelsolutions.se</p>
                     </div>
                   </div>
                 </div>
@@ -145,11 +155,11 @@ const Contact = () => {
 
               <div className="bg-muted p-8 rounded-sm">
                 <h3 className="font-heading text-xl font-bold text-foreground mb-4">
-                  Business Hours
+                  {getTranslation(language, "contact_hours_title")}
                 </h3>
                 <div className="space-y-2 text-muted-foreground">
-                  <p>Monday - Friday: 08:00 - 17:00</p>
-                  <p>Saturday - Sunday: Closed</p>
+                  <p>{getTranslation(language, "contact_hours_weekday")}</p>
+                  <p>{getTranslation(language, "contact_hours_weekend")}</p>
                 </div>
               </div>
             </div>

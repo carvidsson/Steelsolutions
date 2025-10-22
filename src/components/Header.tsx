@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslation } from "@/translations/translations";
 import logo from "@/assets/ab_logo.svg";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,10 +18,10 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Products", path: "/products" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: getTranslation(language, "nav_home"), path: "/" },
+    { name: getTranslation(language, "nav_products"), path: "/products" },
+    { name: getTranslation(language, "nav_about"), path: "/about" },
+    { name: getTranslation(language, "nav_contact"), path: "/contact" },
   ];
 
   return (
@@ -32,20 +35,45 @@ const Header = () => {
           <img src={logo} alt="AB Steelsolutions" className="h-8 w-auto" />
         </Link>
 
-        <ul className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <li key={item.path}>
-              <Link
-                to={item.path}
-                className={`text-sm font-medium tracking-wide transition-colors hover:text-accent ${
-                  location.pathname === item.path ? "text-foreground" : "text-muted-foreground"
-                }`}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center space-x-8">
+          <ul className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className={`text-sm font-medium tracking-wide transition-colors hover:text-accent ${
+                    location.pathname === item.path ? "text-foreground" : "text-muted-foreground"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="hidden md:flex items-center space-x-2 border border-border rounded-sm">
+            <button
+              onClick={() => setLanguage('sv')}
+              className={`px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded-sm ${
+                language === 'sv' 
+                  ? 'bg-accent text-white' 
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              SV
+            </button>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded-sm ${
+                language === 'en' 
+                  ? 'bg-accent text-white' 
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              EN
+            </button>
+          </div>
+        </div>
 
         <button className="md:hidden text-foreground">
           <svg
