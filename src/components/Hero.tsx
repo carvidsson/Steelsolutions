@@ -4,15 +4,42 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/translations/translations";
 import heroImage from "@/assets/hero-bright-manufacturing.jpg";
 
-const Hero = () => {
+interface HeroProps {
+  videoSrc?: string;
+  useVideo?: boolean;
+}
+
+const Hero = ({ videoSrc, useVideo = false }: HeroProps = {}) => {
   const { language } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background Image or Video */}
+      {useVideo && videoSrc ? (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      ) : (
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
+      )}
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
+      
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-32">
           {/* Text Content - Left Side */}
-          <div className="space-y-8 animate-fade-in-up">
+          <div className="space-y-8 animate-fade-in-up max-w-xl">
             <div className="space-y-4">
               <span className="text-sm font-medium text-accent tracking-widest uppercase">
                 {getTranslation(language, "hero_label")}
@@ -21,7 +48,7 @@ const Hero = () => {
                 {getTranslation(language, "hero_title")}
               </h1>
             </div>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed" style={{ animationDelay: "0.2s" }}>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               {getTranslation(language, "hero_subtitle")}
             </p>
             <Button 
@@ -36,14 +63,8 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Image - Right Side */}
-          <div className="relative h-[600px] lg:h-[700px] animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            <img 
-              src={heroImage} 
-              alt="AB Steelsolutions Manufacturing"
-              className="w-full h-full object-cover rounded-sm shadow-2xl"
-            />
-          </div>
+          {/* Right side - empty space for background to show through */}
+          <div className="hidden lg:block" />
         </div>
       </div>
     </section>
