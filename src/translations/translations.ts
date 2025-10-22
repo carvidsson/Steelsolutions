@@ -15,6 +15,7 @@ export const translations = {
     // Customers
     customers_title: "Betrodda av branschledare",
     customers_subtitle: "Vi är stolta över att leverera precisionstillverkade stålkomponenter till några av världens mest krävande industrier",
+    customers_partners_label: "Betrodda partners",
 
     // Client testimonials
     client_rheinmetall: "AB Steelsolutions levererar kompromisslös kvalitet och precision. Deras ingenjörsexpertis har varit avgörande för vår tillverkning av försvarssystem.",
@@ -169,6 +170,7 @@ export const translations = {
     // Customers
     customers_title: "Trusted by Industry Leaders",
     customers_subtitle: "We are proud to deliver precision-engineered steel components to some of the world's most demanding industries",
+    customers_partners_label: "Trusted Partners",
 
     // Client testimonials
     client_rheinmetall: "AB Steelsolutions delivers uncompromising quality and precision. Their engineering expertise has been instrumental in our defense systems manufacturing.",

@@ -1,44 +1,48 @@
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslation } from "@/translations/translations";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const Customers = () => {
+  const { language } = useLanguage();
   const [selectedClient, setSelectedClient] = useState(0);
 
   const clients = [
     {
       name: "Rheinmetall",
-      testimonial: "AB Steelsolutions delivers uncompromising quality and precision. Their engineering expertise has been instrumental in our defense systems manufacturing.",
-      author: "Dr. Klaus Werner",
-      position: "Head of Production Engineering, Rheinmetall"
+      testimonialKey: "client_rheinmetall",
+      authorKey: "client_rheinmetall_author",
+      positionKey: "client_rheinmetall_position"
     },
     {
       name: "Volvo Group",
-      testimonial: "AB Steelsolutions delivers uncompromising quality and precision. Their engineering expertise has been instrumental in our advanced manufacturing processes.",
-      author: "Henrik Johansson",
-      position: "Chief Engineering Officer, Volvo Group"
+      testimonialKey: "client_volvo",
+      authorKey: "client_volvo_author",
+      positionKey: "client_volvo_position"
     },
     {
       name: "ABB",
-      testimonial: "The precision and reliability of AB Steelsolutions' components are exceptional. They understand the demands of high-performance industrial applications.",
-      author: "Emma Andersson",
-      position: "Global Sourcing Director, ABB"
+      testimonialKey: "client_abb",
+      authorKey: "client_abb_author",
+      positionKey: "client_abb_position"
     },
     {
       name: "Scania",
-      testimonial: "Outstanding quality and on-time delivery. AB Steelsolutions has been a trusted partner in our heavy vehicle manufacturing for years.",
-      author: "Lars Bergström",
-      position: "Supply Chain Manager, Scania"
+      testimonialKey: "client_scania",
+      authorKey: "client_scania_author",
+      positionKey: "client_scania_position"
     },
     {
       name: "Sandvik",
-      testimonial: "Their technical expertise and commitment to excellence align perfectly with our standards. A reliable partner for critical components.",
-      author: "Sofia Lindqvist",
-      position: "Materials Engineering Lead, Sandvik"
+      testimonialKey: "client_sandvik",
+      authorKey: "client_sandvik_author",
+      positionKey: "client_sandvik_position"
     },
     {
       name: "Atlas Copco",
-      testimonial: "AB Steelsolutions consistently exceeds expectations. Their precision machining capabilities are world-class.",
-      author: "Anders Svensson",
-      position: "Engineering Director, Atlas Copco"
+      testimonialKey: "client_atlascopco",
+      authorKey: "client_atlascopco_author",
+      positionKey: "client_atlascopco_position"
     }
   ];
 
@@ -49,13 +53,15 @@ const Customers = () => {
           <div className="space-y-8">
             <div>
               <p className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4">
-                Trusted Partners
+                {getTranslation(language, "customers_partners_label")}
               </p>
               <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Industry Leaders Trust Our Precision
+                {getTranslation(language, "customers_title")}
               </h2>
             </div>
-            <ul className="space-y-4">
+            
+            {/* Desktop: Vertical list */}
+            <ul className="hidden md:flex md:flex-col space-y-4">
               {clients.map((client, index) => (
                 <li 
                   key={client.name}
@@ -69,16 +75,38 @@ const Customers = () => {
                 </li>
               ))}
             </ul>
+
+            {/* Mobile: Horizontal scroll */}
+            <ScrollArea className="md:hidden w-full whitespace-nowrap">
+              <div className="flex gap-4 pb-4">
+                {clients.map((client, index) => (
+                  <button
+                    key={client.name}
+                    onClick={() => setSelectedClient(index)}
+                    className={`text-xl font-heading font-medium transition-colors px-6 py-3 rounded-sm ${
+                      selectedClient === index 
+                        ? 'text-accent bg-accent/10' 
+                        : 'text-foreground hover:text-accent hover:bg-accent/5'
+                    }`}
+                  >
+                    {client.name}
+                  </button>
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
           </div>
           
           <div className="bg-muted rounded-sm p-12 lg:p-16">
             <blockquote className="space-y-6">
               <p className="text-xl md:text-2xl font-light text-foreground leading-relaxed italic">
-                "{clients[selectedClient].testimonial}"
+                "{getTranslation(language, clients[selectedClient].testimonialKey)}"
               </p>
               <footer className="text-sm text-muted-foreground">
-                <div className="font-medium text-foreground">{clients[selectedClient].author}</div>
-                {clients[selectedClient].position}
+                <div className="font-medium text-foreground">
+                  {getTranslation(language, clients[selectedClient].authorKey)}
+                </div>
+                {getTranslation(language, clients[selectedClient].positionKey)}
               </footer>
             </blockquote>
           </div>
