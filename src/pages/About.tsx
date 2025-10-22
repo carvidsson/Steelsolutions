@@ -33,9 +33,7 @@ const About = () => {
                 {getTranslation(language, "about_identity_title")}
               </h2>
               <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
-                {getTranslation(language, "about_identity_text").split('\n\n').map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
+                <p>{getTranslation(language, "about_identity_text")}</p>
               </div>
             </div>
             <div>
@@ -50,12 +48,10 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div className="lg:order-2">
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-                {getTranslation(language, "about_vision_title")}
+                {getTranslation(language, "about_environment_title")}
               </h2>
               <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
-                {getTranslation(language, "about_vision_text").split('\n\n').map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
+                <p>{getTranslation(language, "about_environment_text")}</p>
               </div>
             </div>
             <div className="lg:order-1">
@@ -64,6 +60,15 @@ const About = () => {
                   "{getTranslation(language, "about_promise_text")}"
                 </blockquote>
               </div>
+            </div>
+          </div>
+
+          <div className="mb-24">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
+              {getTranslation(language, "about_vision_title")}
+            </h2>
+            <div className="text-lg text-muted-foreground leading-relaxed space-y-4 max-w-4xl mx-auto">
+              <p>{getTranslation(language, "about_vision_text")}</p>
             </div>
           </div>
 

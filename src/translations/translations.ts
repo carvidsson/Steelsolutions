@@ -105,28 +105,41 @@ export const translations = {
     about_page_subtitle: "Nordisk precisionsteknik sedan 1987",
     
     about_identity_title: "Vår identitet",
-    about_identity_text: "AB Steelsolutions grundades i maj 1987 i Hammarö och har sedan dess varit en ledande aktör inom stålhandel och precisionstillverkning i Norden. Under ledning av ägare Pelle Alsterlind har vi byggt upp ett förtroendekapital genom att konsekvent leverera produkter av högsta kvalitet.\n\nVi agerar som en strategisk mellanhand mellan globala ståltillverkare och nordiska industriföretag, med särskild expertis inom konstruktionsstål och precisionstillverkade komponenter.",
+    about_identity_text: "Vi på AB Steelsolutions är en ledande aktör inom stålbranschen, med över 50 års samlad erfarenhet. Vi specialiserar oss på både råmaterial och färdiga stålprodukter, med en upphandling som sträcker sig över Europa och internationellt. Vår kärnmarknad är Sverige och Skandinavien, där vi byggt upp ett omfattande kontaktnät och djupgående kunskaper inom rörtillverkning.",
     
-    about_vision_title: "Vision & Mission",
-    about_vision_text: "Vår vision är att vara Nordens mest betrodda partner för avancerade stållösningar. Vi strävar efter att kombinera nordisk precisionsteknik med global stålindustris bästa praxis.\n\nVår mission är att leverera stållösningar som överträffar våra kunders förväntningar genom innovation, precision och engagemang för excellens.",
+    about_environment_title: "Miljö",
+    about_environment_text: "I takt med att miljömedvetenheten ökar, ställer våra kunder högre krav på oss som leverantör att bidra till en hållbar utveckling. AB Steelsolutions är dedikerade till att minska stålindustrins klimatpåverkan genom innovativa lösningar. Ett exempel på detta är vår användning av Magnelis och andra zink/magnesium-beläggningar. Dessa avancerade material minskar klimatpåverkan genom mindre materialanvändning och reducerad miljöbelastning, tack vare deras effektivitet och hållbarhet.",
     
-    about_promise_title: "Vårt löfte",
-    about_promise_text: "Vi lovar att aldrig kompromissa med kvalitet. Varje komponent, varje leverans och varje kundrelation behandlas med samma noggrannhet och engagemang som har varit vårt signum sedan 1987.",
+    about_vision_title: "Utvecklar för framtiden",
+    about_vision_text: "Vi strävar efter att ständigt förbättra våra produkter och tjänster. Genom att följa den senaste utvecklingen inom stålproduktion och materialteknologi kan vi erbjuda produkter som inte bara är av hög kvalitet utan också minskar miljöpåverkan. Vårt arbete är inriktat på att förse våra kunder med de mest hållbara och innovativa stållösningarna på marknaden.",
+    
+    about_promise_text: "Vi lovar att aldrig kompromissa med kvalitet. Varje komponent, varje leverans och varje kundrelation behandlas med samma noggrannhet och engagemang som har varit vårt signum.",
     
     about_stats_title: "Nyckeltal",
-    about_stat1: "35+ år",
-    about_stat1_desc: "Erfarenhet i branschen",
-    about_stat2: "500+",
-    about_stat2_desc: "Nöjda kunder",
-    about_stat3: "ISO 9001",
-    about_stat3_desc: "Kvalitetscertifiering",
-    about_stat4: "±0,01mm",
-    about_stat4_desc: "Precisionstolerans",
+    about_stat1: "50+ år",
+    about_stat1_desc: "Samlad erfarenhet",
+    about_stat2: "Europa",
+    about_stat2_desc: "Internationell upphandling",
+    about_stat3: "Skandinavien",
+    about_stat3_desc: "Vår kärnmarknad",
+    about_stat4: "Hållbarhet",
+    about_stat4_desc: "Magnelis-beläggningar",
 
     // Contact Page
     contact_page_title: "Kontakta oss",
     contact_page_subtitle: "Låt oss diskutera hur våra precisionsteknikslösningar kan stödja ditt nästa projekt",
     contact_page_hero: "Ta kontakt",
+    
+    contact_team_title: "Vårt team",
+    contact_person1_name: "Pelle Alsterlind",
+    contact_person1_role: "Säljare",
+    contact_person1_phone: "+46 (0)768 48 50 97",
+    contact_person1_email: "pelle.alsterlind@absteelsolutions.se",
+    
+    contact_person2_name: "Christian Bergqvist",
+    contact_person2_role: "Säljare",
+    contact_person2_phone: "+46 (0)738 86 33 27",
+    contact_person2_email: "christian.bergqvist@absteelsolutions.se",
     
     contact_form_title: "Skicka ett meddelande",
     contact_form_name: "Ditt namn",
@@ -137,7 +150,7 @@ export const translations = {
     contact_form_success: "Meddelande skickat! Vi återkommer inom kort.",
     
     contact_info_title: "Kontaktinformation",
-    contact_headquarters: "Huvudkontor",
+    contact_visit_address: "Besöksadress",
     contact_phone: "Telefon",
     contact_email: "E-post",
     contact_hours_title: "Öppettider",
@@ -260,28 +273,41 @@ export const translations = {
     about_page_subtitle: "Nordic precision engineering since 1987",
     
     about_identity_title: "Our Identity",
-    about_identity_text: "AB Steelsolutions was founded in May 1987 in Hammarö and has since been a leading player in steel trading and precision manufacturing in the Nordic region. Under the leadership of owner Pelle Alsterlind, we have built trust through consistently delivering products of the highest quality.\n\nWe act as a strategic intermediary between global steel manufacturers and Nordic industrial companies, with particular expertise in structural steel and precision-manufactured components.",
+    about_identity_text: "We at AB Steelsolutions are a leading player in the steel industry, with over 50 years of combined experience. We specialize in both raw materials and finished steel products, with procurement spanning Europe and internationally. Our core market is Sweden and Scandinavia, where we have built an extensive network and deep knowledge in tube manufacturing.",
     
-    about_vision_title: "Vision & Mission",
-    about_vision_text: "Our vision is to be the Nordic region's most trusted partner for advanced steel solutions. We strive to combine Nordic precision engineering with global steel industry best practices.\n\nOur mission is to deliver steel solutions that exceed our customers' expectations through innovation, precision, and commitment to excellence.",
+    about_environment_title: "Environment",
+    about_environment_text: "As environmental awareness increases, our customers place higher demands on us as suppliers to contribute to sustainable development. AB Steelsolutions is dedicated to reducing the steel industry's climate impact through innovative solutions. An example of this is our use of Magnelis and other zinc/magnesium coatings. These advanced materials reduce climate impact through less material usage and reduced environmental burden, thanks to their efficiency and durability.",
     
-    about_promise_title: "Our Promise",
-    about_promise_text: "We promise to never compromise on quality. Every component, every delivery, and every customer relationship is treated with the same care and commitment that has been our hallmark since 1987.",
+    about_vision_title: "Developing for the Future",
+    about_vision_text: "We strive to constantly improve our products and services. By following the latest developments in steel production and material technology, we can offer products that are not only of high quality but also reduce environmental impact. Our work is focused on providing our customers with the most sustainable and innovative steel solutions on the market.",
+    
+    about_promise_text: "We promise to never compromise on quality. Every component, every delivery, and every customer relationship is treated with the same care and commitment that has been our hallmark.",
     
     about_stats_title: "Key Figures",
-    about_stat1: "35+ years",
-    about_stat1_desc: "Industry experience",
-    about_stat2: "500+",
-    about_stat2_desc: "Satisfied customers",
-    about_stat3: "ISO 9001",
-    about_stat3_desc: "Quality certification",
-    about_stat4: "±0.01mm",
-    about_stat4_desc: "Precision tolerance",
+    about_stat1: "50+ years",
+    about_stat1_desc: "Combined experience",
+    about_stat2: "Europe",
+    about_stat2_desc: "International procurement",
+    about_stat3: "Scandinavia",
+    about_stat3_desc: "Our core market",
+    about_stat4: "Sustainability",
+    about_stat4_desc: "Magnelis coatings",
 
     // Contact Page
     contact_page_title: "Contact Us",
     contact_page_subtitle: "Let's discuss how our precision engineering solutions can support your next project",
     contact_page_hero: "Get in Touch",
+    
+    contact_team_title: "Our Team",
+    contact_person1_name: "Pelle Alsterlind",
+    contact_person1_role: "Sales Representative",
+    contact_person1_phone: "+46 (0)768 48 50 97",
+    contact_person1_email: "pelle.alsterlind@absteelsolutions.se",
+    
+    contact_person2_name: "Christian Bergqvist",
+    contact_person2_role: "Sales Representative",
+    contact_person2_phone: "+46 (0)738 86 33 27",
+    contact_person2_email: "christian.bergqvist@absteelsolutions.se",
     
     contact_form_title: "Send us a message",
     contact_form_name: "Your name",
@@ -292,7 +318,7 @@ export const translations = {
     contact_form_success: "Message sent successfully! We'll get back to you soon.",
     
     contact_info_title: "Contact Information",
-    contact_headquarters: "Headquarters",
+    contact_visit_address: "Visit Address",
     contact_phone: "Phone",
     contact_email: "Email",
     contact_hours_title: "Business Hours",

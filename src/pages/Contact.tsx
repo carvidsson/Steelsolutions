@@ -4,10 +4,14 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/translations/translations";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin } from "lucide-react";
+import pelleImage from "@/assets/pelle-alsterlind.jpg";
+import christianImage from "@/assets/christian-bergqvist.jpg";
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -51,6 +55,79 @@ const Contact = () => {
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
+          <div className="mb-16">
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-8 text-center">
+              {getTranslation(language, "contact_team_title")}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <Avatar className="w-24 h-24">
+                      <AvatarImage src={pelleImage} alt="Pelle Alsterlind" />
+                      <AvatarFallback>PA</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h3 className="font-heading text-xl font-bold text-foreground">
+                        {getTranslation(language, "contact_person1_name")}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {getTranslation(language, "contact_person1_role")}
+                      </p>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex items-center justify-center space-x-2">
+                          <Phone className="w-4 h-4 text-accent" />
+                          <a href={`tel:${getTranslation(language, "contact_person1_phone")}`} className="hover:text-accent">
+                            {getTranslation(language, "contact_person1_phone")}
+                          </a>
+                        </div>
+                        <div className="flex items-center justify-center space-x-2">
+                          <Mail className="w-4 h-4 text-accent" />
+                          <a href={`mailto:${getTranslation(language, "contact_person1_email")}`} className="hover:text-accent">
+                            {getTranslation(language, "contact_person1_email")}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <Avatar className="w-24 h-24">
+                      <AvatarImage src={christianImage} alt="Christian Bergqvist" />
+                      <AvatarFallback>CB</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h3 className="font-heading text-xl font-bold text-foreground">
+                        {getTranslation(language, "contact_person2_name")}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {getTranslation(language, "contact_person2_role")}
+                      </p>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex items-center justify-center space-x-2">
+                          <Phone className="w-4 h-4 text-accent" />
+                          <a href={`tel:${getTranslation(language, "contact_person2_phone")}`} className="hover:text-accent">
+                            {getTranslation(language, "contact_person2_phone")}
+                          </a>
+                        </div>
+                        <div className="flex items-center justify-center space-x-2">
+                          <Mail className="w-4 h-4 text-accent" />
+                          <a href={`mailto:${getTranslation(language, "contact_person2_email")}`} className="hover:text-accent">
+                            {getTranslation(language, "contact_person2_email")}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="space-y-12">
               <div>
@@ -118,11 +195,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">
-                        {getTranslation(language, "contact_headquarters")}
+                        {getTranslation(language, "contact_visit_address")}
                       </h3>
                       <p className="text-muted-foreground">
-                        Hammarö<br />
-                        {getTranslation(language, "footer_location")}
+                        Torggatan 2A<br />
+                        447 30 Vårgårda<br />
+                        Sweden
                       </p>
                     </div>
                   </div>
@@ -135,7 +213,7 @@ const Contact = () => {
                       <h3 className="font-semibold text-foreground mb-1">
                         {getTranslation(language, "contact_phone")}
                       </h3>
-                      <p className="text-muted-foreground">+46 54 56 01 95</p>
+                      <p className="text-muted-foreground">+46 (0)738 86 33 27</p>
                     </div>
                   </div>
 
