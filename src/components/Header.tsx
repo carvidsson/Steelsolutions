@@ -48,7 +48,7 @@ const Header = () => {
                 <Link
                   to={item.path}
                   className={`text-sm font-medium tracking-wide transition-colors hover:text-accent ${
-                    location.pathname === item.path ? "text-foreground" : "text-muted-foreground"
+                    location.pathname === item.path ? "text-accent" : "text-muted-foreground"
                   }`}
                 >
                   {item.name}
@@ -106,7 +106,7 @@ const Header = () => {
                       to={item.path}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`text-base font-medium tracking-wide transition-colors hover:text-accent ${
-                        location.pathname === item.path ? "text-foreground" : "text-muted-foreground"
+                        location.pathname === item.path ? "text-accent" : "text-muted-foreground"
                       }`}
                     >
                       {item.name}
