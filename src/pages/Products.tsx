@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -93,8 +94,10 @@ const Products = () => {
                       ))}
                     </ul>
                   </div>
-                  <Button className="bg-primary hover:bg-primary/90">
-                    {getTranslation(language, "products_cta")}
+                  <Button asChild className="bg-primary hover:bg-primary/90">
+                    <Link to="/contact">
+                      {getTranslation(language, "products_cta")}
+                    </Link>
                   </Button>
                 </div>
               </div>

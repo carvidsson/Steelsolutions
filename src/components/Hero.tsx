@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/translations/translations";
 import heroImage from "@/assets/hero-manufacturing.jpg";
@@ -23,11 +24,14 @@ const Hero = () => {
           {getTranslation(language, "hero_subtitle")}
         </p>
         <Button 
+          asChild
           size="lg" 
           className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-base animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
         >
-          {getTranslation(language, "hero_cta")}
+          <Link to="/contact">
+            {getTranslation(language, "hero_cta")}
+          </Link>
         </Button>
       </div>
     </section>
