@@ -7,6 +7,7 @@ export const translations = {
     nav_contact: "Kontakt",
 
     // Hero
+    hero_label: "AB Steelsolutions",
     hero_title: "Precision i varje detalj",
     hero_subtitle: "Nordisk ingenjörskonst möter avancerad ståltillverkningsteknologi",
     hero_cta: "Utforska våra lösningar",
@@ -160,6 +161,7 @@ export const translations = {
     nav_contact: "Contact",
 
     // Hero
+    hero_label: "AB Steelsolutions",
     hero_title: "Precision in every detail",
     hero_subtitle: "Nordic engineering meets advanced steel manufacturing technology",
     hero_cta: "Explore our solutions",
