@@ -102,7 +102,7 @@ export const translations = {
 
     // About Page
     about_page_title: "Om oss",
-    about_page_subtitle: "Nordisk precisionsteknik sedan 1987",
+    about_page_subtitle: "Sedan 2018",
     
     about_identity_title: "Vår identitet",
     about_identity_text: "Vi på AB Steelsolutions är en ledande aktör inom stålbranschen, med över 50 års samlad erfarenhet. Vi specialiserar oss på både råmaterial och färdiga stålprodukter, med en upphandling som sträcker sig över Europa och internationellt. Vår kärnmarknad är Sverige och Skandinavien, där vi byggt upp ett omfattande kontaktnät och djupgående kunskaper inom rörtillverkning.",
@@ -161,7 +161,7 @@ export const translations = {
     footer_about: "Om oss",
     footer_products: "Produkter",
     footer_contact: "Kontakt",
-    footer_tagline: "Nordisk precisionsteknik sedan 1987",
+    footer_tagline: "Sedan 2018",
     footer_location: "Hammarö, Sverige",
     footer_rights: "Alla rättigheter förbehållna",
     footer_privacy: "Integritetspolicy",
@@ -270,7 +270,7 @@ export const translations = {
 
     // About Page
     about_page_title: "About Us",
-    about_page_subtitle: "Nordic precision engineering since 1987",
+    about_page_subtitle: "Since 2018",
     
     about_identity_title: "Our Identity",
     about_identity_text: "We at AB Steelsolutions are a leading player in the steel industry, with over 50 years of combined experience. We specialize in both raw materials and finished steel products, with procurement spanning Europe and internationally. Our core market is Sweden and Scandinavia, where we have built an extensive network and deep knowledge in tube manufacturing.",
@@ -329,7 +329,7 @@ export const translations = {
     footer_about: "About Us",
     footer_products: "Products",
     footer_contact: "Contact",
-    footer_tagline: "Nordic precision engineering since 1987",
+    footer_tagline: "Since 2018",
     footer_location: "Hammarö, Sweden",
     footer_rights: "All rights reserved",
     footer_privacy: "Privacy Policy",
