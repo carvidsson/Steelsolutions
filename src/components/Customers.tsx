@@ -1,11 +1,45 @@
+import { useState } from "react";
+
 const Customers = () => {
+  const [selectedClient, setSelectedClient] = useState(0);
+
   const clients = [
-    "Rheinmetall",
-    "Volvo Group",
-    "ABB",
-    "Scania",
-    "Sandvik",
-    "Atlas Copco"
+    {
+      name: "Rheinmetall",
+      testimonial: "AB Steelsolutions delivers uncompromising quality and precision. Their engineering expertise has been instrumental in our defense systems manufacturing.",
+      author: "Dr. Klaus Werner",
+      position: "Head of Production Engineering, Rheinmetall"
+    },
+    {
+      name: "Volvo Group",
+      testimonial: "AB Steelsolutions delivers uncompromising quality and precision. Their engineering expertise has been instrumental in our advanced manufacturing processes.",
+      author: "Henrik Johansson",
+      position: "Chief Engineering Officer, Volvo Group"
+    },
+    {
+      name: "ABB",
+      testimonial: "The precision and reliability of AB Steelsolutions' components are exceptional. They understand the demands of high-performance industrial applications.",
+      author: "Emma Andersson",
+      position: "Global Sourcing Director, ABB"
+    },
+    {
+      name: "Scania",
+      testimonial: "Outstanding quality and on-time delivery. AB Steelsolutions has been a trusted partner in our heavy vehicle manufacturing for years.",
+      author: "Lars Bergström",
+      position: "Supply Chain Manager, Scania"
+    },
+    {
+      name: "Sandvik",
+      testimonial: "Their technical expertise and commitment to excellence align perfectly with our standards. A reliable partner for critical components.",
+      author: "Sofia Lindqvist",
+      position: "Materials Engineering Lead, Sandvik"
+    },
+    {
+      name: "Atlas Copco",
+      testimonial: "AB Steelsolutions consistently exceeds expectations. Their precision machining capabilities are world-class.",
+      author: "Anders Svensson",
+      position: "Engineering Director, Atlas Copco"
+    }
   ];
 
   return (
@@ -24,11 +58,14 @@ const Customers = () => {
             <ul className="space-y-4">
               {clients.map((client, index) => (
                 <li 
-                  key={client}
-                  className="text-2xl font-heading font-medium text-foreground hover:text-accent transition-colors cursor-pointer animate-slide-in"
+                  key={client.name}
+                  onClick={() => setSelectedClient(index)}
+                  className={`text-2xl font-heading font-medium transition-colors cursor-pointer animate-slide-in ${
+                    selectedClient === index ? 'text-accent' : 'text-foreground hover:text-accent'
+                  }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {client}
+                  {client.name}
                 </li>
               ))}
             </ul>
@@ -37,11 +74,11 @@ const Customers = () => {
           <div className="bg-muted rounded-sm p-12 lg:p-16">
             <blockquote className="space-y-6">
               <p className="text-xl md:text-2xl font-light text-foreground leading-relaxed italic">
-                "AB Steelsolutions delivers uncompromising quality and precision. Their engineering expertise has been instrumental in our advanced manufacturing processes."
+                "{clients[selectedClient].testimonial}"
               </p>
               <footer className="text-sm text-muted-foreground">
-                <div className="font-medium text-foreground">Henrik Johansson</div>
-                Chief Engineering Officer, Volvo Group
+                <div className="font-medium text-foreground">{clients[selectedClient].author}</div>
+                {clients[selectedClient].position}
               </footer>
             </blockquote>
           </div>
