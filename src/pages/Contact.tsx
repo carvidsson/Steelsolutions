@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { Mail, Phone, MapPin } from "lucide-react";
 import pelleImage from "@/assets/pelle-alsterlind.jpg";
 import christianImage from "@/assets/christian-bergqvist.jpg";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -37,6 +38,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        titleKey="seo_contact_title"
+        descriptionKey="seo_contact_description"
+        keywordsKey="seo_contact_keywords"
+        path="/contact"
+      />
       <Header />
       
       <section className="pt-32 pb-16 bg-graphite text-white">

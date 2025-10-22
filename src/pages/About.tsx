@@ -3,12 +3,19 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/translations/translations";
 import heroImage from "@/assets/hero-manufacturing.jpg";
+import SEO from "@/components/SEO";
 
 const About = () => {
   const { language } = useLanguage();
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        titleKey="seo_about_title"
+        descriptionKey="seo_about_description"
+        keywordsKey="seo_about_keywords"
+        path="/about"
+      />
       <Header />
       
       <section className="pt-32 pb-16 bg-graphite text-white">

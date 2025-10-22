@@ -162,10 +162,27 @@ export const translations = {
     footer_products: "Produkter",
     footer_contact: "Kontakt",
     footer_tagline: "Sedan 2018",
-    footer_location: "Hammarö, Sverige",
+    footer_location: "Vårgårda, Sverige",
     footer_rights: "Alla rättigheter förbehållna",
     footer_privacy: "Integritetspolicy",
     footer_terms: "Användarvillkor",
+
+    // SEO
+    seo_home_title: "AB Steelsolutions | Ledande leverantör av stålprodukter i Sverige",
+    seo_home_description: "Ledande leverantör av stålprodukter och rör i Sverige. Vi erbjuder högkvalitativa stålbalkar, rör och specialprodukter med leverans över hela Skandinavien sedan 2018.",
+    seo_home_keywords: "stål, rör, stålbalkar, stålprodukter, Vårgårda, Sverige, Skandinavien, stålleverantör, byggstål",
+
+    seo_products_title: "Produkter | AB Steelsolutions - Stålbalkar, Rör & Plåt",
+    seo_products_description: "Utforska vårt omfattande sortiment av stålprodukter: balkar, rör, plåt och specialprodukter. Högkvalitativa material för din verksamhet med leverans över hela Sverige.",
+    seo_products_keywords: "stålbalkar, stålrör, stålplåt, byggstål, konstruktionsstål, CNC-bearbetning, precisionstillverkning",
+
+    seo_about_title: "Om oss | AB Steelsolutions - Stålexperter sedan 2018",
+    seo_about_description: "AB Steelsolutions grundades 2018 och är en ledande aktör inom stålbranschen med fokus på kvalitet, hållbarhet och kundnöjdhet. Vårt erfarna team har över 50 års samlad branschkunskap.",
+    seo_about_keywords: "AB Steelsolutions, om oss, stålföretag, Vårgårda, hållbarhet, Magnelis, miljö",
+
+    seo_contact_title: "Kontakt | AB Steelsolutions - Vi hjälper dig",
+    seo_contact_description: "Kontakta AB Steelsolutions för offertförfrågningar och information. Vi finns i Vårgårda och hjälper dig gärna med dina stålbehov. Telefon: +46 738 86 33 27",
+    seo_contact_keywords: "kontakt, offert, stål, Vårgårda, telefon, email, AB Steelsolutions",
   },
   en: {
     // Navigation
@@ -330,10 +347,27 @@ export const translations = {
     footer_products: "Products",
     footer_contact: "Contact",
     footer_tagline: "Since 2018",
-    footer_location: "Hammarö, Sweden",
+    footer_location: "Vårgårda, Sweden",
     footer_rights: "All rights reserved",
     footer_privacy: "Privacy Policy",
     footer_terms: "Terms of Service",
+
+    // SEO
+    seo_home_title: "AB Steelsolutions | Leading Steel Products Supplier in Sweden",
+    seo_home_description: "Leading supplier of steel products and tubes in Sweden. We offer high-quality steel beams, tubes, and specialty products with delivery throughout Scandinavia since 2018.",
+    seo_home_keywords: "steel, tubes, steel beams, steel products, Vårgårda, Sweden, Scandinavia, steel supplier, construction steel",
+
+    seo_products_title: "Products | AB Steelsolutions - Steel Beams, Tubes & Plates",
+    seo_products_description: "Explore our comprehensive range of steel products: beams, tubes, plates, and specialty products. High-quality materials for your business with delivery throughout Sweden.",
+    seo_products_keywords: "steel beams, steel tubes, steel plates, construction steel, structural steel, CNC machining, precision manufacturing",
+
+    seo_about_title: "About Us | AB Steelsolutions - Steel Experts since 2018",
+    seo_about_description: "AB Steelsolutions was founded in 2018 and is a leading player in the steel industry with focus on quality, sustainability, and customer satisfaction. Our experienced team has over 50 years of combined industry knowledge.",
+    seo_about_keywords: "AB Steelsolutions, about us, steel company, Vårgårda, sustainability, Magnelis, environment",
+
+    seo_contact_title: "Contact | AB Steelsolutions - We're Here to Help",
+    seo_contact_description: "Contact AB Steelsolutions for quotes and information. We are located in Vårgårda and are happy to help with your steel needs. Phone: +46 738 86 33 27",
+    seo_contact_keywords: "contact, quote, steel, Vårgårda, phone, email, AB Steelsolutions",
   }
 };
 

@@ -6,6 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/translations/translations";
 import productsImage from "@/assets/products-warehouse.jpg";
 import beamsImage from "@/assets/product-beams.jpg";
+import SEO from "@/components/SEO";
 
 const Products = () => {
   const { language } = useLanguage();
@@ -36,6 +37,12 @@ const Products = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        titleKey="seo_products_title"
+        descriptionKey="seo_products_description"
+        keywordsKey="seo_products_keywords"
+        path="/products"
+      />
       <Header />
       
       <section className="pt-32 pb-16 bg-graphite text-white">
