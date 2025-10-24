@@ -33,29 +33,29 @@ const Hero = ({ videoSrc, useVideo = false }: HeroProps = {}) => {
       )}
       
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-32">
-          {/* Text Content - Left Side with Glassmorphism */}
-          <div className="backdrop-blur-xl bg-background/80 border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl animate-fade-in-up max-w-xl">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <span className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm font-medium tracking-widest uppercase rounded-full border border-accent/20">
+      <div className="relative z-10 container mx-auto px-8 lg:px-12 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-screen py-40">
+          {/* Text Content - Left Side Clean Design */}
+          <div className="bg-background border border-border/50 rounded-3xl p-12 md:p-16 shadow-sm animate-fade-in-up max-w-2xl">
+            <div className="space-y-12">
+              <div className="space-y-6">
+                <span className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm font-normal tracking-wider uppercase rounded-lg border border-accent/20">
                   {getTranslation(language, "hero_label")}
                 </span>
-                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-medium text-foreground leading-tight">
                   {getTranslation(language, "hero_title")}
                 </h1>
               </div>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <p className="text-lg md:text-xl text-muted-foreground leading-loose animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
                 {getTranslation(language, "hero_subtitle")}
               </p>
               <Button 
                 asChild
                 size="lg" 
-                className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-base animate-fade-in-up rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="bg-accent hover:bg-accent/80 text-white px-10 py-6 text-base animate-fade-in-up"
                 style={{ animationDelay: "0.4s" }}
               >
                 <Link to="/contact">

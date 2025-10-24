@@ -7,21 +7,21 @@ const Footer = () => {
   const { language } = useLanguage();
 
   return (
-    <footer className="bg-graphite text-white">
-      <div className="container mx-auto px-6 lg:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-muted border-t border-border/30">
+      <div className="container mx-auto px-8 lg:px-12 py-20 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
           <div>
-            <img src={logo} alt="AB Steelsolutions" className="h-8 w-auto mb-4" />
-            <p className="text-sm text-muted-foreground max-w-xs">
+            <img src={logo} alt="AB Steelsolutions" className="h-8 w-auto mb-6" />
+            <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
               {getTranslation(language, "footer_tagline")}
             </p>
           </div>
 
           <div>
-            <h3 className="font-heading text-sm font-semibold text-foreground mb-4 tracking-wide uppercase">
+            <h3 className="font-heading text-sm font-medium text-foreground mb-6 tracking-wider uppercase">
               {getTranslation(language, "nav_about")}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
                 <Link to="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors">
                   {getTranslation(language, "footer_about")}
@@ -41,10 +41,10 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-heading text-sm font-semibold text-foreground mb-4 tracking-wide uppercase">
+            <h3 className="font-heading text-sm font-medium text-foreground mb-6 tracking-wider uppercase">
               {getTranslation(language, "nav_contact")}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
                 <a 
                   href="https://www.linkedin.com/company/ab-steelsolutions" 
@@ -67,21 +67,21 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-heading text-sm font-semibold text-foreground mb-4 tracking-wide uppercase">
+            <h3 className="font-heading text-sm font-medium text-foreground mb-6 tracking-wider uppercase">
               {getTranslation(language, "footer_location")}
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               {getTranslation(language, "footer_location")}
             </p>
           </div>
         </div>
 
-        <div className="border-t border-border pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-border/30 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} AB Steelsolutions. {getTranslation(language, "footer_rights")}.
             </p>
-            <div className="flex gap-6">
+            <div className="flex gap-8">
               <Link to="/privacy" className="text-sm text-muted-foreground hover:text-accent transition-colors">
                 {getTranslation(language, "footer_privacy")}
               </Link>

@@ -28,11 +28,11 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-lg border-b border-border shadow-md" : "bg-background/80 backdrop-blur-md"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        scrolled ? "bg-background/90 backdrop-blur-sm border-b border-border/30" : "bg-background/70 backdrop-blur-sm"
       }`}
     >
-      <nav className="container mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
+      <nav className="container mx-auto px-8 lg:px-12 py-6 flex items-center justify-between max-w-7xl">
         <Link to="/" className="flex items-center space-x-3">
           <img 
             src={logo} 
@@ -60,12 +60,12 @@ const Header = () => {
             ))}
           </ul>
 
-          <div className="hidden md:flex items-center space-x-1 bg-muted/50 backdrop-blur-sm rounded-full p-1 border border-border/50">
+          <div className="hidden md:flex items-center space-x-1 bg-muted/50 rounded-full p-1 border border-border/30">
             <button
               onClick={() => setLanguage('sv')}
-              className={`px-4 py-2 text-xs font-medium tracking-wide transition-all duration-300 rounded-full ${
+              className={`px-4 py-2 text-xs font-normal tracking-wide transition-all duration-200 rounded-full ${
                 language === 'sv' 
-                  ? 'bg-accent text-white shadow-md scale-105' 
+                  ? 'bg-accent text-white' 
                   : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
               }`}
             >
@@ -73,9 +73,9 @@ const Header = () => {
             </button>
             <button
               onClick={() => setLanguage('en')}
-              className={`px-4 py-2 text-xs font-medium tracking-wide transition-all duration-300 rounded-full ${
+              className={`px-4 py-2 text-xs font-normal tracking-wide transition-all duration-200 rounded-full ${
                 language === 'en' 
-                  ? 'bg-accent text-white shadow-md scale-105' 
+                  ? 'bg-accent text-white' 
                   : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
               }`}
             >

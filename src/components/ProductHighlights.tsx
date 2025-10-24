@@ -51,41 +51,42 @@ const ProductHighlights = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="max-w-2xl mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
+    <section className="py-40 bg-muted">
+      <div className="container mx-auto px-8 lg:px-12 max-w-7xl">
+        <div className="max-w-2xl mb-20">
+          <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-8 leading-tight">
             {getTranslation(language, "products_title")}
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-loose">
             {getTranslation(language, "products_subtitle")}
           </p>
         </div>
 
         {/* Desktop: Grid layout */}
-        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {products.map((product, index) => (
             <div 
               key={index}
-              className="group bg-background rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 animate-fade-in border border-border/50 hover:border-accent/20"
+              className="group bg-background rounded-3xl overflow-hidden transition-all duration-300 animate-fade-in border border-border/50 hover:border-accent/30"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="h-64 overflow-hidden relative">
-                <img 
-                  src={product.image} 
-                  alt={getTranslation(language, product.titleKey)}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-graphite/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <span className="absolute top-4 left-4 px-3 py-1.5 bg-accent text-white text-xs font-medium tracking-wide uppercase rounded-full shadow-lg">
+              <div className="p-6 bg-muted">
+                <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-border/30">
+                  <img 
+                    src={product.image} 
+                    alt={getTranslation(language, product.titleKey)}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </div>
+              <div className="p-10 space-y-4">
+                <span className="inline-block px-3 py-1.5 bg-accent/10 text-accent text-xs font-normal tracking-wide uppercase rounded-lg">
                   {product.category}
                 </span>
-              </div>
-              <div className="p-8 space-y-3">
-                <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                <h3 className="font-heading text-2xl font-medium text-foreground">
                   {getTranslation(language, product.titleKey)}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-loose">
                   {getTranslation(language, product.descKey)}
                 </p>
               </div>
@@ -96,29 +97,30 @@ const ProductHighlights = () => {
         {/* Mobile/Tablet: Carousel */}
         <div className="lg:hidden relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
+            <div className="flex gap-4">
               {products.map((product, index) => (
                 <div 
                   key={index}
-                  className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] px-2"
+                  className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%]"
                 >
-                  <div className="group bg-background rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-border/50">
-                    <div className="h-64 overflow-hidden relative">
-                      <img 
-                        src={product.image} 
-                        alt={getTranslation(language, product.titleKey)}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-graphite/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <span className="absolute top-4 left-4 px-3 py-1.5 bg-accent text-white text-xs font-medium tracking-wide uppercase rounded-full shadow-lg">
+                  <div className="group bg-background rounded-3xl overflow-hidden transition-all duration-300 border border-border/50">
+                    <div className="p-6 bg-muted">
+                      <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-border/30">
+                        <img 
+                          src={product.image} 
+                          alt={getTranslation(language, product.titleKey)}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div className="p-8 space-y-4">
+                      <span className="inline-block px-3 py-1.5 bg-accent/10 text-accent text-xs font-normal tracking-wide uppercase rounded-lg">
                         {product.category}
                       </span>
-                    </div>
-                    <div className="p-8 space-y-3">
-                      <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                      <h3 className="font-heading text-2xl font-medium text-foreground">
                         {getTranslation(language, product.titleKey)}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-muted-foreground leading-loose">
                         {getTranslation(language, product.descKey)}
                       </p>
                     </div>

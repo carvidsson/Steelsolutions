@@ -8,51 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 216 9% 18%;
+    --background: 40 15% 98%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 216 9% 18%;
+    --card: 40 15% 98%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 216 9% 18%;
+    --popover: 40 15% 98%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 216 9% 18%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 40 15% 98%;
 
-    --secondary: 206 14% 56%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 20 25% 70%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 91%;
-    --muted-foreground: 180 2% 59%;
+    --muted: 30 20% 92%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 27 31% 67%;
-    --accent-foreground: 216 9% 18%;
+    --accent: 18 60% 65%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 91%;
-    --input: 0 0% 91%;
-    --ring: 216 9% 18%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 0 0% 15%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    --graphite: 216 9% 18%;
-    --steel-blue: 206 14% 56%;
-    --warm-gray: 180 2% 59%;
-    --taupe: 27 31% 67%;
-    --off-white: 0 0% 91%;
+    --graphite: 0 0% 15%;
+    --steel-blue: 20 25% 70%;
+    --warm-gray: 0 0% 45%;
+    --taupe: 30 20% 75%;
+    --off-white: 30 20% 92%;
     
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(var(--graphite) / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(var(--graphite) / 0.1), 0 2px 4px -1px hsl(var(--graphite) / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(var(--graphite) / 0.1), 0 4px 6px -2px hsl(var(--graphite) / 0.05);
-    --shadow-xl: 0 20px 25px -5px hsl(var(--graphite) / 0.1), 0 10px 10px -5px hsl(var(--graphite) / 0.04);
-    --shadow-2xl: 0 25px 50px -12px hsl(var(--graphite) / 0.25);
+    --shadow-sm: 0 1px 2px 0 hsl(var(--graphite) / 0.03);
+    --shadow-md: 0 2px 4px -1px hsl(var(--graphite) / 0.06);
+    --shadow-lg: 0 4px 6px -1px hsl(var(--graphite) / 0.08);
+    --shadow-xl: 0 8px 12px -2px hsl(var(--graphite) / 0.08);
+    --shadow-2xl: 0 12px 24px -4px hsl(var(--graphite) / 0.1);
     
     /* Blur */
     --blur-sm: 4px;
@@ -61,9 +61,9 @@ All colors MUST be HSL.
     --blur-xl: 24px;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--steel-blue)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--taupe)));
-    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--graphite) / 0.9) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent) / 0.8));
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--background) / 0.95) 100%);
 
     --sidebar-background: 0 0% 98%;
 

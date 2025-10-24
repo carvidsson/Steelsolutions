@@ -47,15 +47,15 @@ const Customers = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
+    <section className="py-40 bg-background">
+      <div className="container mx-auto px-8 lg:px-12 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="space-y-12">
             <div>
-              <p className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4">
+              <p className="text-sm font-normal text-muted-foreground tracking-wider uppercase mb-6">
                 {getTranslation(language, "customers_partners_label")}
               </p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground mb-8 leading-tight">
                 {getTranslation(language, "customers_title")}
               </h2>
             </div>
@@ -97,26 +97,24 @@ const Customers = () => {
             </ScrollArea>
           </div>
           
-          <div className="bg-gradient-to-br from-muted to-muted/50 rounded-2xl p-12 lg:p-16 relative overflow-hidden border border-accent/10 shadow-xl">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-accent/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 right-0 w-40 h-40 bg-accent/5 rounded-full translate-x-1/2 translate-y-1/2" />
-            <blockquote className="space-y-6 relative z-10">
-              <div className="flex gap-1 mb-4">
+          <div className="bg-background rounded-3xl p-12 lg:p-16 border border-border/50">
+            <blockquote className="space-y-8">
+              <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-accent fill-current" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
-              <svg className="w-12 h-12 text-accent/20 mb-4" fill="currentColor" viewBox="0 0 32 32">
+              <svg className="w-14 h-14 text-accent/15 mb-6" fill="currentColor" viewBox="0 0 32 32">
                 <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
               </svg>
-              <p className="text-xl md:text-2xl font-light text-foreground leading-relaxed">
+              <p className="text-xl md:text-2xl font-light text-foreground leading-loose">
                 {getTranslation(language, clients[selectedClient].testimonialKey)}
               </p>
-              <footer className="flex items-center gap-4 pt-4 border-t border-border/50">
+              <footer className="flex items-center gap-5 pt-6 border-t border-border/30">
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="text-accent font-heading text-lg font-bold">
+                  <span className="text-accent font-heading text-lg font-medium">
                     {getTranslation(language, clients[selectedClient].authorKey).charAt(0)}
                   </span>
                 </div>

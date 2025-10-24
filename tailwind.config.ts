@@ -61,11 +61,17 @@ export default {
         smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
       borderRadius: {
-        sm: "0.5rem",
-        md: "0.75rem",
-        lg: "1rem",
-        xl: "1.25rem",
-        "2xl": "1.5rem",
+        sm: "0.75rem",
+        md: "1rem",
+        lg: "1.25rem",
+        xl: "1.5rem",
+        "2xl": "2rem",
+        "3xl": "2.5rem",
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+        '26': '6.5rem',
       },
       boxShadow: {
         sm: "var(--shadow-sm)",
