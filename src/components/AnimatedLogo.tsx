@@ -6,36 +6,36 @@ const AnimatedLogo = () => {
   
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 1", "end 0"]
+    offset: ["start 0.8", "end 0.2"]
   });
-  const smoothProgress = useSpring(scrollYProgress, { stiffness: 18, damping: 34, mass: 1.1 });
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 30, damping: 25, mass: 0.8 });
 
   // Transform scroll progress to animation values
   // Logotypen flyger in snabbt (0 -> 0.3), stannar kvar komplett (0.3 -> 0.7), flyger ut (0.7 -> 1.0)
   
   // Top part animations
-  const topY = useTransform(smoothProgress, [0, 0.45, 0.55, 1], ["-100vh", "0vh", "0vh", "100vh"]);
-  const topRotate = useTransform(smoothProgress, [0, 0.45, 0.55, 1], [-180, 0, 0, 180]);
-  const topOpacity = useTransform(smoothProgress, [0, 0.35, 0.65, 0.9, 1], [0, 1, 1, 1, 0]);
-  const topScale = useTransform(smoothProgress, [0, 0.45, 0.55, 1], [0.8, 1, 1, 0.8]);
+  const topY = useTransform(smoothProgress, [0, 0.35, 0.65, 1], ["-100vh", "0vh", "0vh", "100vh"]);
+  const topRotate = useTransform(smoothProgress, [0, 0.35, 0.65, 1], [-180, 0, 0, 180]);
+  const topOpacity = useTransform(smoothProgress, [0, 0.25, 0.65, 0.85, 1], [0, 1, 1, 1, 0]);
+  const topScale = useTransform(smoothProgress, [0, 0.35, 0.65, 1], [0.8, 1, 1, 0.8]);
 
   // Bottom left animations
-  const leftX = useTransform(smoothProgress, [0, 0.45, 0.55, 1], ["-100vw", "0vw", "0vw", "100vw"]);
-  const leftRotate = useTransform(smoothProgress, [0, 0.45, 0.55, 1], [180, 0, 0, -180]);
-  const leftOpacity = useTransform(smoothProgress, [0, 0.35, 0.65, 0.9, 1], [0, 1, 1, 1, 0]);
-  const leftScale = useTransform(smoothProgress, [0, 0.45, 0.55, 1], [0.8, 1, 1, 0.8]);
+  const leftX = useTransform(smoothProgress, [0, 0.35, 0.65, 1], ["-100vw", "0vw", "0vw", "100vw"]);
+  const leftRotate = useTransform(smoothProgress, [0, 0.35, 0.65, 1], [180, 0, 0, -180]);
+  const leftOpacity = useTransform(smoothProgress, [0, 0.25, 0.65, 0.85, 1], [0, 1, 1, 1, 0]);
+  const leftScale = useTransform(smoothProgress, [0, 0.35, 0.65, 1], [0.8, 1, 1, 0.8]);
 
   // Bottom right animations
-  const rightX = useTransform(smoothProgress, [0, 0.45, 0.55, 1], ["100vw", "0vw", "0vw", "-100vw"]);
-  const rightRotate = useTransform(smoothProgress, [0, 0.45, 0.55, 1], [-180, 0, 0, 180]);
-  const rightOpacity = useTransform(smoothProgress, [0, 0.35, 0.65, 0.9, 1], [0, 1, 1, 1, 0]);
-  const rightScale = useTransform(smoothProgress, [0, 0.45, 0.55, 1], [0.8, 1, 1, 0.8]);
+  const rightX = useTransform(smoothProgress, [0, 0.35, 0.65, 1], ["100vw", "0vw", "0vw", "-100vw"]);
+  const rightRotate = useTransform(smoothProgress, [0, 0.35, 0.65, 1], [-180, 0, 0, 180]);
+  const rightOpacity = useTransform(smoothProgress, [0, 0.25, 0.65, 0.85, 1], [0, 1, 1, 1, 0]);
+  const rightScale = useTransform(smoothProgress, [0, 0.35, 0.65, 1], [0.8, 1, 1, 0.8]);
 
   // Snap effect - händer när delarna möts
-  const logoScale = useTransform(smoothProgress, [0.23, 0.25, 0.28], [1, 1.05, 1]);
+  const logoScale = useTransform(smoothProgress, [0.33, 0.35, 0.38], [1, 1.05, 1]);
 
   // Text opacity - fadear in efter att delarna mött
-  const textOpacity = useTransform(smoothProgress, [0.25, 0.35, 0.75, 0.85], [0, 1, 1, 0]);
+  const textOpacity = useTransform(smoothProgress, [0.35, 0.45, 0.65, 0.8], [0, 1, 1, 0]);
 
   return (
     <div ref={ref} className="relative w-full flex items-center justify-center lg:justify-end min-h-[900px] lg:min-h-[1200px] overflow-visible -mr-12 lg:-mr-24">
