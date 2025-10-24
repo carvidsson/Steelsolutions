@@ -6,7 +6,7 @@ const AnimatedLogo = () => {
   
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end end"]
   });
 
   // Transform scroll progress to animation values
@@ -37,7 +37,7 @@ const AnimatedLogo = () => {
   const textOpacity = useTransform(scrollYProgress, [0.3, 0.4, 0.7, 0.85], [0, 1, 1, 0]);
 
   return (
-    <div ref={ref} className="relative w-full flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
+    <div ref={ref} className="relative w-full flex items-center justify-center min-h-[600px] lg:min-h-[800px]">
       <motion.svg 
         width="100%" 
         height="100%" 
