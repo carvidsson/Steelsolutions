@@ -2,8 +2,8 @@ name: Deploy STAGING (beta.absteelsolutions.se)
 
 on:
   push:
-    branches: [ "main", "dev" ]   # kör på main och dev
-  workflow_dispatch:              # manuell start i Actions
+    branches: [ "main", "dev" ]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -23,7 +23,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Skapa .htaccess (SPA + HTTPS) i buildmappen
       - name: Add .htaccess
         run: |
           cat > dist/.htaccess << 'EOF'
@@ -39,7 +38,7 @@ jobs:
           EOF
 
       - name: Deploy via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           port: ${{ secrets.FTP_PORT }}
