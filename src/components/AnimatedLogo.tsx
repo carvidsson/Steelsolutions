@@ -10,29 +10,31 @@ const AnimatedLogo = () => {
   });
 
   // Transform scroll progress to animation values
+  // Logotypen flyger in snabbt (0 -> 0.3), stannar kvar komplett (0.3 -> 0.7), flyger ut (0.7 -> 1.0)
+  
   // Top part animations
-  const topY = useTransform(scrollYProgress, [0, 0.5, 1], ["-100vh", "0vh", "100vh"]);
-  const topRotate = useTransform(scrollYProgress, [0, 0.5, 1], [-180, 0, 180]);
-  const topOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0, 1, 1, 1, 0]);
-  const topScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+  const topY = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], ["-100vh", "0vh", "0vh", "100vh"]);
+  const topRotate = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [-180, 0, 0, 180]);
+  const topOpacity = useTransform(scrollYProgress, [0, 0.2, 0.7, 0.85, 1], [0, 1, 1, 1, 0]);
+  const topScale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
 
   // Bottom left animations
-  const leftX = useTransform(scrollYProgress, [0, 0.5, 1], ["-100vw", "0vw", "100vw"]);
-  const leftRotate = useTransform(scrollYProgress, [0, 0.5, 1], [180, 0, -180]);
-  const leftOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0, 1, 1, 1, 0]);
-  const leftScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+  const leftX = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], ["-100vw", "0vw", "0vw", "100vw"]);
+  const leftRotate = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [180, 0, 0, -180]);
+  const leftOpacity = useTransform(scrollYProgress, [0, 0.2, 0.7, 0.85, 1], [0, 1, 1, 1, 0]);
+  const leftScale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
 
   // Bottom right animations
-  const rightX = useTransform(scrollYProgress, [0, 0.5, 1], ["100vw", "0vw", "-100vw"]);
-  const rightRotate = useTransform(scrollYProgress, [0, 0.5, 1], [-180, 0, 180]);
-  const rightOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0, 1, 1, 1, 0]);
-  const rightScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+  const rightX = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], ["100vw", "0vw", "0vw", "-100vw"]);
+  const rightRotate = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [-180, 0, 0, 180]);
+  const rightOpacity = useTransform(scrollYProgress, [0, 0.2, 0.7, 0.85, 1], [0, 1, 1, 1, 0]);
+  const rightScale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
 
-  // Snap effect
-  const logoScale = useTransform(scrollYProgress, [0.45, 0.5, 0.55], [1, 1.05, 1]);
+  // Snap effect - händer när delarna möts
+  const logoScale = useTransform(scrollYProgress, [0.28, 0.3, 0.33], [1, 1.05, 1]);
 
-  // Text opacity
-  const textOpacity = useTransform(scrollYProgress, [0.5, 0.6, 0.7, 1], [0, 1, 1, 0]);
+  // Text opacity - fadear in efter att delarna mött
+  const textOpacity = useTransform(scrollYProgress, [0.3, 0.4, 0.7, 0.85], [0, 1, 1, 0]);
 
   return (
     <div ref={ref} className="relative w-full flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
