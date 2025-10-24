@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -9,32 +10,22 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/translations/translations";
 import { toast } from "sonner";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import pelleImage from "@/assets/pelle-alsterlind.jpg";
 import christianImage from "@/assets/christian-bergqvist.jpg";
 import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { language } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: ""
-  });
+  const location = useLocation();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success(getTranslation(language, "contact_form_success"));
-    setFormData({ name: "", email: "", company: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get('success') === 'true') {
+      toast.success(getTranslation(language, "contact_form_success"));
+      window.history.replaceState({}, '', '/contact');
+    }
+  }, [location, language]);
 
   return (
     <div className="min-h-screen">
@@ -141,13 +132,20 @@ const Contact = () => {
                 <h2 className="font-heading text-3xl font-bold text-foreground mb-8">
                   {getTranslation(language, "contact_form_title")}
                 </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form 
+                  action="/cgi-bin/FormMail.pl" 
+                  method="POST" 
+                  className="space-y-6"
+                >
+                  <input type="hidden" name="recipient" value="info@absteelsolutions.se" />
+                  <input type="hidden" name="_redirect" value="https://absteelsolutions.se/contact?success=true" />
+                  <input type="hidden" name="_subject" value="Nytt meddelande från kontaktformuläret" />
+                  <input type="hidden" name="required" value="name,email,message" />
+                  
                   <div>
                     <Input
                       name="name"
                       placeholder={getTranslation(language, "contact_form_name")}
-                      value={formData.name}
-                      onChange={handleChange}
                       required
                       className="bg-background"
                     />
@@ -157,8 +155,6 @@ const Contact = () => {
                       name="email"
                       type="email"
                       placeholder={getTranslation(language, "contact_form_email")}
-                      value={formData.email}
-                      onChange={handleChange}
                       required
                       className="bg-background"
                     />
@@ -167,8 +163,6 @@ const Contact = () => {
                     <Input
                       name="company"
                       placeholder={getTranslation(language, "contact_form_company")}
-                      value={formData.company}
-                      onChange={handleChange}
                       className="bg-background"
                     />
                   </div>
@@ -176,8 +170,6 @@ const Contact = () => {
                     <Textarea
                       name="message"
                       placeholder={getTranslation(language, "contact_form_message")}
-                      value={formData.message}
-                      onChange={handleChange}
                       required
                       rows={6}
                       className="bg-background resize-none"
