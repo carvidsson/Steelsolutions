@@ -39,15 +39,15 @@ jobs:
           </IfModule>
           EOF
 
-      - name: Deploy via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          port: ${{ secrets.FTP_PORT }}
-          username: ${{ secrets.FTP_USER_STAGING }}
-          password: ${{ secrets.FTP_PASS_STAGING }}
-          protocol: ftps
-          local-dir: dist/
-          # Ditt FTP-konto är låst till beta-mappen, så lägg i rot:
-          server-dir: /
-          dangerous-clean-slate: true
+- name: Deploy via FTPS
+  uses: SamKirkland/FTP-Deploy-Action@v4
+  with:
+    server: ${{ secrets.FTP_HOST }}
+    port: ${{ secrets.FTP_PORT }}
+    username: ${{ secrets.FTP_USER_STAGING }}
+    password: ${{ secrets.FTP_PASS_STAGING }}
+    protocol: ftps
+    local-dir: dist/
+    server-dir: /
+    dangerous-clean-slate: true
+
