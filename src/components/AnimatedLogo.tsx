@@ -5,10 +5,10 @@ const AnimatedLogo = () => {
   const containerRef = useRef(null);
   const logoRef = useRef(null);
   
-  // Scroll progress för hela containern (200vh)
+  // Scroll progress för hela containern - startar tidigare
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ["start 20%", "end start"]
   });
 
   // Mjuk spring-animation
@@ -121,7 +121,7 @@ const AnimatedLogo = () => {
   );
 
   return (
-    <div ref={containerRef} className="relative h-[120vh]">
+    <div ref={containerRef} className="relative h-[100vh]">
       {/* Sticky container som "pinnar" loggan i viewport */}
       <div className="sticky top-0 left-0 w-full h-screen flex items-center justify-center overflow-visible">
         <div ref={logoRef} className="relative w-full flex items-center justify-center lg:justify-end overflow-visible -mr-6 lg:-mr-16 2xl:-mr-32">
@@ -131,7 +131,7 @@ const AnimatedLogo = () => {
             viewBox="0 0 51 53" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
-            className="w-full max-w-[400px] lg:max-w-[700px] 2xl:max-w-[1000px] h-auto relative z-0"
+            className="w-full max-w-[500px] lg:max-w-[900px] 2xl:max-w-[1200px] h-auto relative z-0"
             style={{ 
               scale: useTransform(
                 [logoScale, microMovement],

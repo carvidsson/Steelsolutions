@@ -59,7 +59,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 -mt-32 lg:-mt-48 animate-fade-in">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 -mt-48 lg:-mt-64 animate-fade-in">
             <div className="lg:order-2">
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
                 {getTranslation(language, "about_environment_title")}
