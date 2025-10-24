@@ -63,30 +63,28 @@ const ProductHighlights = () => {
         </div>
 
         {/* Desktop: Grid layout */}
-        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <div 
               key={index}
-              className="group bg-background rounded-3xl overflow-hidden transition-all duration-300 animate-fade-in border border-border/50 hover:border-accent/30"
+              className="group bg-background rounded-3xl overflow-hidden transition-all duration-300 animate-fade-in shadow-sm hover:shadow-md"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="p-6 bg-muted">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-border/30">
-                  <img 
-                    src={product.image} 
-                    alt={getTranslation(language, product.titleKey)}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={product.image} 
+                  alt={getTranslation(language, product.titleKey)}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-              <div className="p-10 space-y-4">
+              <div className="p-8 space-y-5">
                 <span className="inline-block px-3 py-1.5 bg-accent/10 text-accent text-xs font-normal tracking-wide uppercase rounded-lg">
                   {product.category}
                 </span>
-                <h3 className="font-heading text-2xl font-medium text-foreground">
+                <h3 className="font-heading text-2xl font-medium text-foreground leading-snug">
                   {getTranslation(language, product.titleKey)}
                 </h3>
-                <p className="text-muted-foreground leading-loose">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {getTranslation(language, product.descKey)}
                 </p>
               </div>
@@ -103,24 +101,22 @@ const ProductHighlights = () => {
                   key={index}
                   className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%]"
                 >
-                  <div className="group bg-background rounded-3xl overflow-hidden transition-all duration-300 border border-border/50">
-                    <div className="p-6 bg-muted">
-                      <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-border/30">
-                        <img 
-                          src={product.image} 
-                          alt={getTranslation(language, product.titleKey)}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                  <div className="group bg-background rounded-3xl overflow-hidden transition-all duration-300 shadow-sm">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={product.image} 
+                        alt={getTranslation(language, product.titleKey)}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <div className="p-8 space-y-4">
+                    <div className="p-8 space-y-5">
                       <span className="inline-block px-3 py-1.5 bg-accent/10 text-accent text-xs font-normal tracking-wide uppercase rounded-lg">
                         {product.category}
                       </span>
-                      <h3 className="font-heading text-2xl font-medium text-foreground">
+                      <h3 className="font-heading text-2xl font-medium text-foreground leading-snug">
                         {getTranslation(language, product.titleKey)}
                       </h3>
-                      <p className="text-muted-foreground leading-loose">
+                      <p className="text-muted-foreground leading-relaxed text-sm">
                         {getTranslation(language, product.descKey)}
                       </p>
                     </div>
