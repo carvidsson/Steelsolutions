@@ -91,39 +91,39 @@ const About = () => {
           </div>
 
           <div className="p-16 lg:p-24 rounded-sm" style={{ backgroundColor: '#efebe7' }}>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-16 lg:mb-24 text-center text-graphite">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-16 lg:mb-20 text-center text-graphite">
               {getTranslation(language, "about_stats_title")}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 max-w-6xl mx-auto">
-              <div className="text-center space-y-4">
-                <div className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4" style={{ color: '#C3A78A' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20 max-w-7xl mx-auto">
+              <div className="text-center space-y-3">
+                <div className="text-4xl md:text-5xl font-bold mb-3" style={{ color: '#C3A78A' }}>
                   {getTranslation(language, "about_stat1")}
                 </div>
-                <div className="text-base md:text-lg text-graphite">
+                <div className="text-sm md:text-base text-graphite leading-relaxed">
                   {getTranslation(language, "about_stat1_desc")}
                 </div>
               </div>
-              <div className="text-center space-y-4">
-                <div className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4" style={{ color: '#C3A78A' }}>
+              <div className="text-center space-y-3">
+                <div className="text-4xl md:text-5xl font-bold mb-3" style={{ color: '#C3A78A' }}>
                   {getTranslation(language, "about_stat2")}
                 </div>
-                <div className="text-base md:text-lg text-graphite">
+                <div className="text-sm md:text-base text-graphite leading-relaxed">
                   {getTranslation(language, "about_stat2_desc")}
                 </div>
               </div>
-              <div className="text-center space-y-4">
-                <div className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4" style={{ color: '#C3A78A' }}>
+              <div className="text-center space-y-3">
+                <div className="text-4xl md:text-5xl font-bold mb-3" style={{ color: '#C3A78A' }}>
                   {getTranslation(language, "about_stat3")}
                 </div>
-                <div className="text-base md:text-lg text-graphite">
+                <div className="text-sm md:text-base text-graphite leading-relaxed">
                   {getTranslation(language, "about_stat3_desc")}
                 </div>
               </div>
-              <div className="text-center space-y-4">
-                <div className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4" style={{ color: '#C3A78A' }}>
+              <div className="text-center space-y-3">
+                <div className="text-4xl md:text-5xl font-bold mb-3" style={{ color: '#C3A78A' }}>
                   {getTranslation(language, "about_stat4")}
                 </div>
-                <div className="text-base md:text-lg text-graphite">
+                <div className="text-sm md:text-base text-graphite leading-relaxed">
                   {getTranslation(language, "about_stat4_desc")}
                 </div>
               </div>
