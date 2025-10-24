@@ -13,6 +13,7 @@ import { toast } from "sonner";
 import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import pelleImage from "@/assets/pelle-alsterlind.jpg";
 import christianImage from "@/assets/christian-bergqvist.jpg";
+import heroImage from "@/assets/hero-bright-manufacturing.jpg";
 import SEO from "@/components/SEO";
 
 const Contact = () => {
@@ -37,15 +38,25 @@ const Contact = () => {
       />
       <Header />
       
-      <section className="pt-32 pb-16 bg-graphite text-white">
-        <div className="container mx-auto px-6 lg:px-12">
-          <p className="text-sm font-medium text-taupe tracking-widest uppercase mb-4">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
+        
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+        
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32">
+          <p className="text-sm font-medium text-accent tracking-widest uppercase mb-4">
             {getTranslation(language, "contact_page_hero")}
           </p>
-          <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6 text-foreground">
             {getTranslation(language, "contact_page_title")}
           </h1>
-          <p className="text-xl text-offWhite max-w-3xl leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
             {getTranslation(language, "contact_page_subtitle")}
           </p>
         </div>
