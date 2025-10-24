@@ -66,32 +66,34 @@ const NewsGrid = () => {
           </p>
         </div>
 
-        {/* Desktop: Grid layout */}
-        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Desktop: Grid layout with Bento-style */}
+        <div className="hidden lg:grid grid-cols-3 gap-6">
           {news.map((item, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-sm cursor-pointer animate-fade-in ${
-                item.large ? "md:col-span-2 h-[500px]" : "h-[400px]"
+              className={`group relative overflow-hidden rounded-2xl cursor-pointer animate-fade-in border border-border/20 shadow-lg hover:shadow-2xl transition-all duration-500 ${
+                item.large ? "col-span-2 row-span-2 h-[600px]" : "col-span-1 h-[290px]"
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <img
                 src={item.image}
                 alt={getTranslation(language, item.titleKey)}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-graphite/90 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
-                <span className="text-xs font-medium text-accent tracking-widest uppercase mb-3 block">
-                  {getTranslation(language, item.categoryKey)}
-                </span>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-white mb-3">
-                  {getTranslation(language, item.titleKey)}
-                </h3>
-                <p className="text-offWhite leading-relaxed">
-                  {getTranslation(language, item.descKey)}
-                </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-graphite/95 via-graphite/50 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                <div className="backdrop-blur-sm bg-background/10 rounded-xl p-4 border border-white/10">
+                  <span className="inline-block px-3 py-1 bg-accent/90 text-white text-xs font-medium tracking-widest uppercase rounded-full mb-3 shadow-lg">
+                    {getTranslation(language, item.categoryKey)}
+                  </span>
+                  <h3 className={`font-heading font-bold text-white mb-2 ${item.large ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"}`}>
+                    {getTranslation(language, item.titleKey)}
+                  </h3>
+                  <p className="text-offWhite leading-relaxed text-sm md:text-base">
+                    {getTranslation(language, item.descKey)}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
@@ -106,23 +108,25 @@ const NewsGrid = () => {
                   key={index}
                   className="flex-[0_0_100%] min-w-0 px-2"
                 >
-                  <div className="group relative overflow-hidden rounded-sm cursor-pointer h-[400px]">
+                  <div className="group relative overflow-hidden rounded-2xl cursor-pointer h-[400px] border border-border/20 shadow-lg">
                     <img
                       src={item.image}
                       alt={getTranslation(language, item.titleKey)}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-graphite/90 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <span className="text-xs font-medium text-accent tracking-widest uppercase mb-3 block">
-                        {getTranslation(language, item.categoryKey)}
-                      </span>
-                      <h3 className="font-heading text-2xl font-bold text-white mb-3">
-                        {getTranslation(language, item.titleKey)}
-                      </h3>
-                      <p className="text-offWhite leading-relaxed">
-                        {getTranslation(language, item.descKey)}
-                      </p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-graphite/95 via-graphite/50 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <div className="backdrop-blur-sm bg-background/10 rounded-xl p-4 border border-white/10">
+                        <span className="inline-block px-3 py-1 bg-accent/90 text-white text-xs font-medium tracking-widest uppercase rounded-full mb-3 shadow-lg">
+                          {getTranslation(language, item.categoryKey)}
+                        </span>
+                        <h3 className="font-heading text-2xl font-bold text-white mb-2">
+                          {getTranslation(language, item.titleKey)}
+                        </h3>
+                        <p className="text-offWhite leading-relaxed text-sm">
+                          {getTranslation(language, item.descKey)}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

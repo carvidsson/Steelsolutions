@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-sm border-b border-border" : "bg-transparent"
+        scrolled ? "bg-background/95 backdrop-blur-lg border-b border-border shadow-md" : "bg-background/80 backdrop-blur-md"
       }`}
     >
       <nav className="container mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
@@ -47,33 +47,36 @@ const Header = () => {
               <li key={item.path}>
                 <Link
                   to={item.path}
-                  className={`text-sm font-medium tracking-wide transition-colors hover:text-accent ${
+                  className={`relative text-sm font-medium tracking-wide transition-all duration-300 hover:text-accent group ${
                     location.pathname === item.path ? "text-accent" : "text-muted-foreground"
                   }`}
                 >
                   {item.name}
+                  <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-accent transform origin-left transition-transform duration-300 ${
+                    location.pathname === item.path ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`} />
                 </Link>
               </li>
             ))}
           </ul>
 
-          <div className="hidden md:flex items-center space-x-2 border border-border rounded-sm">
+          <div className="hidden md:flex items-center space-x-1 bg-muted/50 backdrop-blur-sm rounded-full p-1 border border-border/50">
             <button
               onClick={() => setLanguage('sv')}
-              className={`px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded-sm ${
+              className={`px-4 py-2 text-xs font-medium tracking-wide transition-all duration-300 rounded-full ${
                 language === 'sv' 
-                  ? 'bg-accent text-white' 
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? 'bg-accent text-white shadow-md scale-105' 
+                  : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
               }`}
             >
               SV
             </button>
             <button
               onClick={() => setLanguage('en')}
-              className={`px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded-sm ${
+              className={`px-4 py-2 text-xs font-medium tracking-wide transition-all duration-300 rounded-full ${
                 language === 'en' 
-                  ? 'bg-accent text-white' 
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? 'bg-accent text-white shadow-md scale-105' 
+                  : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
               }`}
             >
               EN

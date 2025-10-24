@@ -61,9 +61,24 @@ export default {
         smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        sm: "0.5rem",
+        md: "0.75rem",
+        lg: "1rem",
+        xl: "1.25rem",
+        "2xl": "1.5rem",
+      },
+      boxShadow: {
+        sm: "var(--shadow-sm)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+        xl: "var(--shadow-xl)",
+        "2xl": "var(--shadow-2xl)",
+      },
+      backdropBlur: {
+        sm: "var(--blur-sm)",
+        md: "var(--blur-md)",
+        lg: "var(--blur-lg)",
+        xl: "var(--blur-xl)",
       },
       keyframes: {
         "accordion-down": {

@@ -33,17 +33,20 @@ const ProductHighlights = () => {
     {
       titleKey: "product1_title",
       descKey: "product1_desc",
-      image: beamsImage
+      image: beamsImage,
+      category: "Specialstål"
     },
     {
       titleKey: "product2_title",
       descKey: "product2_desc",
-      image: productsImage
+      image: productsImage,
+      category: "Bearbetning"
     },
     {
       titleKey: "product3_title",
       descKey: "product3_desc",
-      image: productsImage
+      image: productsImage,
+      category: "Logistik"
     }
   ];
 
@@ -64,18 +67,22 @@ const ProductHighlights = () => {
           {products.map((product, index) => (
             <div 
               key={index}
-              className="group bg-background rounded-sm overflow-hidden hover:shadow-lg transition-all duration-300 animate-fade-in"
+              className="group bg-background rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 animate-fade-in border border-border/50 hover:border-accent/20"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="h-64 overflow-hidden">
+              <div className="h-64 overflow-hidden relative">
                 <img 
                   src={product.image} 
                   alt={getTranslation(language, product.titleKey)}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-graphite/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className="absolute top-4 left-4 px-3 py-1.5 bg-accent text-white text-xs font-medium tracking-wide uppercase rounded-full shadow-lg">
+                  {product.category}
+                </span>
               </div>
-              <div className="p-8">
-                <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
+              <div className="p-8 space-y-3">
+                <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
                   {getTranslation(language, product.titleKey)}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -95,16 +102,20 @@ const ProductHighlights = () => {
                   key={index}
                   className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] px-2"
                 >
-                  <div className="group bg-background rounded-sm overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div className="h-64 overflow-hidden">
+                  <div className="group bg-background rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-border/50">
+                    <div className="h-64 overflow-hidden relative">
                       <img 
                         src={product.image} 
                         alt={getTranslation(language, product.titleKey)}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-graphite/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <span className="absolute top-4 left-4 px-3 py-1.5 bg-accent text-white text-xs font-medium tracking-wide uppercase rounded-full shadow-lg">
+                        {product.category}
+                      </span>
                     </div>
-                    <div className="p-8">
-                      <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
+                    <div className="p-8 space-y-3">
+                      <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
                         {getTranslation(language, product.titleKey)}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">

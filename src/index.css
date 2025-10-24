@@ -36,7 +36,7 @@ All colors MUST be HSL.
     --input: 0 0% 91%;
     --ring: 216 9% 18%;
 
-    --radius: 0.125rem;
+    --radius: 0.75rem;
     
     --graphite: 216 9% 18%;
     --steel-blue: 206 14% 56%;
@@ -46,6 +46,24 @@ All colors MUST be HSL.
     
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(var(--graphite) / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(var(--graphite) / 0.1), 0 2px 4px -1px hsl(var(--graphite) / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--graphite) / 0.1), 0 4px 6px -2px hsl(var(--graphite) / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(var(--graphite) / 0.1), 0 10px 10px -5px hsl(var(--graphite) / 0.04);
+    --shadow-2xl: 0 25px 50px -12px hsl(var(--graphite) / 0.25);
+    
+    /* Blur */
+    --blur-sm: 4px;
+    --blur-md: 8px;
+    --blur-lg: 16px;
+    --blur-xl: 24px;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--steel-blue)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--taupe)));
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--graphite) / 0.9) 100%);
 
     --sidebar-background: 0 0% 98%;
 
