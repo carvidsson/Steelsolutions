@@ -32,8 +32,8 @@ const Hero = ({ videoSrc, useVideo = false }: HeroProps = {}) => {
         />
       )}
       
-      {/* Subtle overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/20 to-transparent" />
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-8 lg:px-16 max-w-7xl">
@@ -45,18 +45,18 @@ const Hero = ({ videoSrc, useVideo = false }: HeroProps = {}) => {
                 <span className="inline-block text-accent text-sm tracking-[0.3em] uppercase font-light">
                   AB STEEL<span className="font-semibold">SOLUTIONS</span>
                 </span>
-                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.1] tracking-tight [text-shadow:_0_2px_20px_rgb(0_0_0_/_60%)]">
+                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] tracking-tight [text-shadow:_0_2px_20px_rgb(0_0_0_/_60%)]">
                   {getTranslation(language, "hero_title")}
                 </h1>
               </div>
-              <p className="text-lg md:text-xl text-foreground/90 leading-relaxed max-w-xl text-balance [text-shadow:_0_1px_10px_rgb(0_0_0_/_50%)] animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <p className="text-lg md:text-xl text-white leading-relaxed max-w-xl text-balance [text-shadow:_0_1px_10px_rgb(0_0_0_/_50%)] animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
                 {getTranslation(language, "hero_subtitle")}
               </p>
               <Button 
                 asChild
                 variant="outline"
                 size="lg" 
-                className="border-2 border-foreground/20 bg-background/10 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background px-10 py-6 text-base rounded-lg animate-fade-in-up transition-all duration-300"
+                className="border-2 border-white/20 bg-background/10 backdrop-blur-sm text-white hover:bg-white hover:text-background px-10 py-6 text-base rounded-lg animate-fade-in-up transition-all duration-300"
                 style={{ animationDelay: "0.4s" }}
               >
                 <Link to="/contact">
