@@ -34,9 +34,9 @@ const About = () => {
       </section>
 
       {/* Company Identity with Animated Logo */}
-      <section className="py-20 bg-gradient-to-b from-transparent via-background/50 to-background">
+      <section className="py-24 lg:py-32 bg-gradient-to-b from-transparent via-background/50 to-background">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
             {/* Text Content - Left Column */}
             <div>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -53,7 +53,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 animate-fade-in">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32 animate-fade-in">
             <div className="lg:order-2">
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
                 {getTranslation(language, "about_environment_title")}
@@ -71,8 +71,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="mb-24">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
+          <div className="mb-32">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
               {getTranslation(language, "about_vision_title")}
             </h2>
             <div className="text-lg text-muted-foreground leading-relaxed space-y-4 max-w-4xl mx-auto">
