@@ -42,8 +42,9 @@ const Hero = ({ videoSrc, useVideo = false }: HeroProps = {}) => {
           <div className="bg-background border border-border/50 rounded-3xl p-12 md:p-16 shadow-sm animate-fade-in-up max-w-2xl">
             <div className="space-y-12">
               <div className="space-y-6">
-                <span className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm font-bold tracking-wider uppercase rounded-lg border border-accent/20">
-                  {getTranslation(language, "hero_label")}
+                <span className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm tracking-wider uppercase rounded-lg border border-accent/20">
+                  <span className="font-normal">AB STEEL</span>
+                  <span className="font-bold">SOLUTIONS</span>
                 </span>
                 <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-medium text-foreground leading-tight">
                   {getTranslation(language, "hero_title")}
