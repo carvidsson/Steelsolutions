@@ -1,50 +1,51 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const AnimatedLogo = () => {
   const ref = useRef(null);
   
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.7", "end 0.3"]
+    offset: ["start 0.95", "end 0.05"]
   });
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 50, damping: 20, mass: 0.6 });
 
   // Transform scroll progress to animation values
   // Logotypen flyger in snabbt (0 -> 0.3), stannar kvar komplett (0.3 -> 0.7), flyger ut (0.7 -> 1.0)
   
   // Top part animations
-  const topY = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], ["-100vh", "0vh", "0vh", "100vh"]);
-  const topRotate = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [-180, 0, 0, 180]);
-  const topOpacity = useTransform(scrollYProgress, [0, 0.15, 0.75, 0.9, 1], [0, 1, 1, 1, 0]);
-  const topScale = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0.8, 1, 1, 0.8]);
+  const topY = useTransform(smoothProgress, [0, 0.25, 0.75, 1], ["-100vh", "0vh", "0vh", "100vh"]);
+  const topRotate = useTransform(smoothProgress, [0, 0.25, 0.75, 1], [-180, 0, 0, 180]);
+  const topOpacity = useTransform(smoothProgress, [0, 0.15, 0.75, 0.9, 1], [0, 1, 1, 1, 0]);
+  const topScale = useTransform(smoothProgress, [0, 0.25, 0.75, 1], [0.8, 1, 1, 0.8]);
 
   // Bottom left animations
-  const leftX = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], ["-100vw", "0vw", "0vw", "100vw"]);
-  const leftRotate = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [180, 0, 0, -180]);
-  const leftOpacity = useTransform(scrollYProgress, [0, 0.15, 0.75, 0.9, 1], [0, 1, 1, 1, 0]);
-  const leftScale = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0.8, 1, 1, 0.8]);
+  const leftX = useTransform(smoothProgress, [0, 0.25, 0.75, 1], ["-100vw", "0vw", "0vw", "100vw"]);
+  const leftRotate = useTransform(smoothProgress, [0, 0.25, 0.75, 1], [180, 0, 0, -180]);
+  const leftOpacity = useTransform(smoothProgress, [0, 0.15, 0.75, 0.9, 1], [0, 1, 1, 1, 0]);
+  const leftScale = useTransform(smoothProgress, [0, 0.25, 0.75, 1], [0.8, 1, 1, 0.8]);
 
   // Bottom right animations
-  const rightX = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], ["100vw", "0vw", "0vw", "-100vw"]);
-  const rightRotate = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [-180, 0, 0, 180]);
-  const rightOpacity = useTransform(scrollYProgress, [0, 0.15, 0.75, 0.9, 1], [0, 1, 1, 1, 0]);
-  const rightScale = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0.8, 1, 1, 0.8]);
+  const rightX = useTransform(smoothProgress, [0, 0.25, 0.75, 1], ["100vw", "0vw", "0vw", "-100vw"]);
+  const rightRotate = useTransform(smoothProgress, [0, 0.25, 0.75, 1], [-180, 0, 0, 180]);
+  const rightOpacity = useTransform(smoothProgress, [0, 0.15, 0.75, 0.9, 1], [0, 1, 1, 1, 0]);
+  const rightScale = useTransform(smoothProgress, [0, 0.25, 0.75, 1], [0.8, 1, 1, 0.8]);
 
   // Snap effect - händer när delarna möts
-  const logoScale = useTransform(scrollYProgress, [0.23, 0.25, 0.28], [1, 1.05, 1]);
+  const logoScale = useTransform(smoothProgress, [0.23, 0.25, 0.28], [1, 1.05, 1]);
 
   // Text opacity - fadear in efter att delarna mött
-  const textOpacity = useTransform(scrollYProgress, [0.25, 0.35, 0.75, 0.85], [0, 1, 1, 0]);
+  const textOpacity = useTransform(smoothProgress, [0.25, 0.35, 0.75, 0.85], [0, 1, 1, 0]);
 
   return (
-    <div ref={ref} className="relative w-full flex items-center justify-center lg:justify-end min-h-[600px] lg:min-h-[800px] overflow-visible -mr-12 lg:-mr-24">
+    <div ref={ref} className="relative w-full flex items-center justify-center lg:justify-end min-h-[900px] lg:min-h-[1200px] overflow-visible -mr-12 lg:-mr-24">
       <motion.svg 
         width="100%" 
         height="100%" 
         viewBox="0 0 51 53" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full max-w-[400px] lg:max-w-[700px] h-auto relative z-0"
+        className="w-full max-w-[520px] lg:max-w-[900px] h-auto relative z-0"
         style={{ scale: logoScale }}
       >
         {/* Top part */}
