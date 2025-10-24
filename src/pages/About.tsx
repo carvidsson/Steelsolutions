@@ -43,20 +43,23 @@ const About = () => {
         </div>
       </section>
 
-      {/* Animated Logo Section */}
-      <section className="relative overflow-visible">
-        <AnimatedLogo />
-      </section>
-
-      {/* Company Identity Section */}
-      <section className="relative -mt-16 lg:-mt-24 py-12 bg-gradient-to-b from-transparent via-background/50 to-background">
+      {/* Company Identity with Animated Logo */}
+      <section className="py-20 bg-gradient-to-b from-transparent via-background/50 to-background">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-              {getTranslation(language, "about_identity_title")}
-            </h2>
-            <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
-              <p>{getTranslation(language, "about_identity_text")}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Text Content - Left Column */}
+            <div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
+                {getTranslation(language, "about_identity_title")}
+              </h2>
+              <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                <p>{getTranslation(language, "about_identity_text")}</p>
+              </div>
+            </div>
+            
+            {/* Animated Logo - Right Column */}
+            <div className="flex items-center justify-center lg:justify-end">
+              <AnimatedLogo />
             </div>
           </div>
 
