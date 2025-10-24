@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/translations/translations";
-import logo from "@/assets/ab_logo.svg";
+import logo from "@/assets/ab_logo_long.svg";
 
 const Footer = () => {
   const { language } = useLanguage();
@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container mx-auto px-8 lg:px-12 py-20 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
           <div>
-            <img src={logo} alt="AB Steelsolutions" className="h-8 w-auto mb-6" />
+            <img src={logo} alt="AB Steelsolutions" className="h-10 w-auto mb-6" />
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
               {getTranslation(language, "footer_tagline")}
             </p>
