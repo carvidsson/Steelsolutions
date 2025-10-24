@@ -56,7 +56,7 @@ const Hero = ({ videoSrc, useVideo = false }: HeroProps = {}) => {
                 asChild
                 variant="outline"
                 size="lg" 
-                className="border-2 border-white/20 bg-background/10 backdrop-blur-sm text-white hover:bg-white hover:text-background px-10 py-6 text-base rounded-lg animate-fade-in-up transition-all duration-300"
+                className="border-2 border-white/20 bg-background/10 backdrop-blur-sm text-white hover:bg-accent hover:text-background px-10 py-6 text-base rounded-lg animate-fade-in-up transition-all duration-300"
                 style={{ animationDelay: "0.4s" }}
               >
                 <Link to="/contact">
