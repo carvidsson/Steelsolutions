@@ -19,25 +19,15 @@ const About = () => {
       />
       <Header />
       
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
-        
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
-        
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32">
+      <section className="bg-[#efebe7] py-16 lg:py-20">
+        <div className="container mx-auto px-6 lg:px-12">
           <p className="text-sm font-medium text-accent tracking-widest uppercase mb-4">
             {getTranslation(language, "about_page_title")}
           </p>
-          <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6 text-foreground">
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-foreground">
             AB Steelsolutions
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-2xl">
             {getTranslation(language, "about_page_subtitle")}
           </p>
         </div>
