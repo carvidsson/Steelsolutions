@@ -2,9 +2,8 @@ name: Deploy STAGING (beta.absteelsolutions.se)
 
 on:
   push:
-    branches: [ "main", "dev" ]   # kör både på main och dev
-  workflow_dispatch:               # gör att du kan starta manuellt i Actions
-
+    branches: [ "main", "dev" ]   # kör på main och dev
+  workflow_dispatch:              # manuell start i Actions
 
 jobs:
   build-and-deploy:
@@ -24,7 +23,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Skapa .htaccess för SPA + HTTPS i buildmappen
+      # Skapa .htaccess (SPA + HTTPS) i buildmappen
       - name: Add .htaccess
         run: |
           cat > dist/.htaccess << 'EOF'
@@ -38,15 +37,15 @@ jobs:
           RewriteRule ^ index.html [L]
           </IfModule>
           EOF
-          
-- name: Deploy via FTPS
-  uses: SamKirkland/FTP-Deploy-Action@v4
-  with:
-    server: ${{ secrets.FTP_HOST }}
-    port: ${{ secrets.FTP_PORT }}
-    username: ${{ secrets.FTP_USER_STAGING }}
-    password: ${{ secrets.FTP_PASS_STAGING }}
-    protocol: ftps
-    local-dir: dist/
-    server-dir: /
-    dangerous-clean-slate: true
+
+      - name: Deploy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          port: ${{ secrets.FTP_PORT }}
+          username: ${{ secrets.FTP_USER_STAGING }}
+          password: ${{ secrets.FTP_PASS_STAGING }}
+          protocol: ftps
+          local-dir: dist/
+          server-dir: /
+          dangerous-clean-slate: true
