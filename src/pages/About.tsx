@@ -45,8 +45,8 @@ const About = () => {
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 overflow-visible">
+            <div className="relative z-10">
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
                 {getTranslation(language, "about_identity_title")}
               </h2>
@@ -54,7 +54,7 @@ const About = () => {
                 <p>{getTranslation(language, "about_identity_text")}</p>
               </div>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center overflow-visible">
               <AnimatedLogo />
             </div>
           </div>
