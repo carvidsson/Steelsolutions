@@ -38,7 +38,7 @@ jobs:
           RewriteRule ^ index.html [L]
           </IfModule>
           EOF
-
+          
 - name: Deploy via FTPS
   uses: SamKirkland/FTP-Deploy-Action@v4
   with:
