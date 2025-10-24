@@ -90,40 +90,40 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg-graphite text-white p-12 lg:p-16 rounded-sm">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">
+          <div className="p-16 lg:p-24 rounded-sm" style={{ backgroundColor: '#efebe7' }}>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-16 text-center text-graphite">
               {getTranslation(language, "about_stats_title")}
             </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-4">
                   {getTranslation(language, "about_stat1")}
                 </div>
-                <div className="text-sm text-offWhite">
+                <div className="text-sm text-graphite/70">
                   {getTranslation(language, "about_stat1_desc")}
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-4">
                   {getTranslation(language, "about_stat2")}
                 </div>
-                <div className="text-sm text-offWhite">
+                <div className="text-sm text-graphite/70">
                   {getTranslation(language, "about_stat2_desc")}
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-4">
                   {getTranslation(language, "about_stat3")}
                 </div>
-                <div className="text-sm text-offWhite">
+                <div className="text-sm text-graphite/70">
                   {getTranslation(language, "about_stat3_desc")}
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-4">
                   {getTranslation(language, "about_stat4")}
                 </div>
-                <div className="text-sm text-offWhite">
+                <div className="text-sm text-graphite/70">
                   {getTranslation(language, "about_stat4_desc")}
                 </div>
               </div>
