@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/translations/translations";
-import heroImage from "@/assets/hero-bright-manufacturing.jpg";
+import heroImage from "@/assets/hero-absteel.png";
 
 interface HeroProps {
   videoSrc?: string;
