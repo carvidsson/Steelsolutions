@@ -38,7 +38,7 @@ const Contact = () => {
       />
       <Header />
       
-      <section className="bg-[#efebe7] py-16 lg:py-20">
+      <section className="bg-[#efebe7] pt-32 pb-16 lg:pt-36 lg:pb-20">
         <div className="container mx-auto px-6 lg:px-12">
           <p className="text-sm font-medium text-accent tracking-widest uppercase mb-4">
             {getTranslation(language, "contact_page_hero")}
