@@ -33,84 +33,84 @@ const AnimatedLogo = () => {
   // === STEG 5: UT-ANIMATION (0.75 → 1.0) ===
   // Delar flyger ut åt motsatt håll
   
-  // Top part animations - 5 steg
+  // Top part animations - mer synlig animation
   const topY = useTransform(
     smoothProgress, 
     [0, 0.20, 0.25, 0.75, 1], 
-    ["-120vh", "0vh", "0vh", "0vh", "120vh"]
+    ["-150vh", "0vh", "0vh", "0vh", "150vh"]
   );
   const topRotate = useTransform(
     smoothProgress, 
     [0, 0.20, 0.25, 0.75, 1], 
-    [-180, 0, 0, 0, 180]
+    [-360, 0, 0, 0, 360]
   );
   const topOpacity = useTransform(
     smoothProgress, 
-    [0, 0.12, 0.25, 0.75, 0.88, 1], 
+    [0, 0.15, 0.25, 0.75, 0.85, 1], 
     [0, 1, 1, 1, 1, 0]
   );
   const topScale = useTransform(
     smoothProgress, 
     [0, 0.20, 0.25, 0.75, 1], 
-    [0.7, 1, 1, 1, 0.7]
+    [0.5, 1, 1, 1, 0.5]
   );
 
-  // Bottom left animations - 5 steg
+  // Bottom left animations - mer synlig animation
   const leftX = useTransform(
     smoothProgress, 
     [0, 0.20, 0.25, 0.75, 1], 
-    ["-120vw", "0vw", "0vw", "0vw", "120vw"]
+    ["-150vw", "0vw", "0vw", "0vw", "150vw"]
   );
   const leftRotate = useTransform(
     smoothProgress, 
     [0, 0.20, 0.25, 0.75, 1], 
-    [180, 0, 0, 0, -180]
+    [360, 0, 0, 0, -360]
   );
   const leftOpacity = useTransform(
     smoothProgress, 
-    [0, 0.12, 0.25, 0.75, 0.88, 1], 
+    [0, 0.15, 0.25, 0.75, 0.85, 1], 
     [0, 1, 1, 1, 1, 0]
   );
   const leftScale = useTransform(
     smoothProgress, 
     [0, 0.20, 0.25, 0.75, 1], 
-    [0.7, 1, 1, 1, 0.7]
+    [0.5, 1, 1, 1, 0.5]
   );
 
-  // Bottom right animations - 5 steg
+  // Bottom right animations - mer synlig animation
   const rightX = useTransform(
     smoothProgress, 
     [0, 0.20, 0.25, 0.75, 1], 
-    ["120vw", "0vw", "0vw", "0vw", "-120vw"]
+    ["150vw", "0vw", "0vw", "0vw", "-150vw"]
   );
   const rightRotate = useTransform(
     smoothProgress, 
     [0, 0.20, 0.25, 0.75, 1], 
-    [-180, 0, 0, 0, 180]
+    [-360, 0, 0, 0, 360]
   );
   const rightOpacity = useTransform(
     smoothProgress, 
-    [0, 0.12, 0.25, 0.75, 0.88, 1], 
+    [0, 0.15, 0.25, 0.75, 0.85, 1], 
     [0, 1, 1, 1, 1, 0]
   );
   const rightScale = useTransform(
     smoothProgress, 
     [0, 0.20, 0.25, 0.75, 1], 
-    [0.7, 1, 1, 1, 0.7]
+    [0.5, 1, 1, 1, 0.5]
   );
 
-  // Snap effect vid ihopklickning (steg 2)
+  // Snap effect vid ihopklickning - mer märkbar
   const logoScale = useTransform(
     smoothProgress, 
     [0.19, 0.22, 0.25], 
-    [1, 1.08, 1]
+    [1, 1.15, 1]
   );
   
-  // Mikrorörelse - subtil pulsering under vila-fasen (steg 4)
+  // Mikrorörelse - tydligare pulsering
   const microMovement = useTransform(
     smoothProgress,
     [0.35, 0.45, 0.55, 0.65, 0.70],
-    [1, 1.015, 1, 1.015, 1]
+    [1, 1.03, 1, 1.03, 1]
   );
 
   // Text opacity
@@ -121,17 +121,17 @@ const AnimatedLogo = () => {
   );
 
   return (
-    	<div ref={containerRef} className="relative h-[80vh]">
+    <div ref={containerRef} className="relative h-[60vh]">
       {/* Sticky container som "pinnar" loggan i viewport */}
-      	<div className="sticky top-0 left-0 w-full h-screen flex items-center justify-center overflow-visible">
-        <div ref={logoRef} className="relative w-full flex items-center justify-center lg:justify-end overflow-visible -mr-6 lg:-mr-16 2xl:-mr-32">
+      <div className="sticky top-0 left-0 w-full h-screen flex items-center justify-center overflow-visible">
+        <div ref={logoRef} className="relative w-full flex items-center justify-center overflow-visible">
           <motion.svg 
             width="100%" 
             height="100%" 
             viewBox="0 0 51 53" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
-            className="w-full max-w-[600px] lg:max-w-[1000px] 2xl:max-w-[1400px] h-auto relative z-0"
+            className="w-full max-w-[700px] lg:max-w-[1100px] 2xl:max-w-[1500px] h-auto relative z-0"
             style={{ 
               scale: useTransform(
                 [logoScale, microMovement],
