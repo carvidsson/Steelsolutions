@@ -2,7 +2,9 @@ name: Deploy STAGING (beta.absteelsolutions.se)
 
 on:
   push:
-    branches: [ "dev" ]   # byt till "main" om du vill deploya från main
+    branches: [ "main", "dev" ]   # kör både på main och dev
+  workflow_dispatch:               # gör att du kan starta manuellt i Actions
+
 
 jobs:
   build-and-deploy:
