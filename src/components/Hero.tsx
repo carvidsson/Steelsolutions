@@ -32,31 +32,31 @@ const Hero = ({ videoSrc, useVideo = false }: HeroProps = {}) => {
         />
       )}
       
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+      {/* Subtle overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/20 to-transparent" />
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-8 lg:px-12 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-screen py-40">
-          {/* Text Content - Left Side Clean Design */}
-          <div className="bg-background border border-border/50 rounded-3xl p-12 md:p-16 shadow-sm animate-fade-in-up max-w-2xl">
-            <div className="space-y-12">
-              <div className="space-y-6">
-                <span className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm tracking-wider uppercase rounded-lg border border-accent/20">
-                  <span className="font-normal">AB STEEL</span>
-                  <span className="font-bold">SOLUTIONS</span>
+      <div className="relative z-10 container mx-auto px-8 lg:px-16 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-screen py-32">
+          {/* Text Content - Scandinavian Minimal Design */}
+          <div className="max-w-2xl animate-fade-in-up">
+            <div className="space-y-16">
+              <div className="space-y-8">
+                <span className="inline-block text-accent text-sm tracking-[0.3em] uppercase font-light">
+                  AB STEEL<span className="font-semibold">SOLUTIONS</span>
                 </span>
-                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-medium text-foreground leading-tight">
+                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.1] tracking-tight [text-shadow:_0_2px_20px_rgb(0_0_0_/_60%)]">
                   {getTranslation(language, "hero_title")}
                 </h1>
               </div>
-              <p className="text-lg md:text-xl text-muted-foreground leading-loose animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <p className="text-lg md:text-xl text-foreground/90 leading-relaxed max-w-xl text-balance [text-shadow:_0_1px_10px_rgb(0_0_0_/_50%)] animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
                 {getTranslation(language, "hero_subtitle")}
               </p>
               <Button 
                 asChild
+                variant="outline"
                 size="lg" 
-                className="bg-accent hover:bg-accent/80 text-white px-10 py-6 text-base animate-fade-in-up"
+                className="border-2 border-foreground/20 bg-background/10 backdrop-blur-sm text-foreground hover:bg-foreground hover:text-background px-10 py-6 text-base rounded-lg animate-fade-in-up transition-all duration-300"
                 style={{ animationDelay: "0.4s" }}
               >
                 <Link to="/contact">
